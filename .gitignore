@@ -1,0 +1,52 @@
+# Ignore tất cả thư mục hệ thống không cần thiết
+.vs/
+Library/
+Logs/
+obj/
+Temp/
+UserSettings/
+Packages/
+ProjectSettings/EditorBuildSettings.asset
+
+# Ignore file của Unity mà không cần thiết để push lên GitHub
+*.csproj
+*.unityproj
+*.sln
+*.suo
+*.user
+*.userprefs
+*.pidb
+*.booproj
+*.svd
+
+# Ignore file build output
+Builds/
+Build/
+ExportedObj/
+*.apk
+*.aab
+*.unitypackage
+
+# Ignore cache của Unity và các file tạm
+.DS_Store
+*.swp
+*.lock
+*.tmp
+*.bak
+*.ilk
+*.idb
+*.pdb
+*.log
+*.mdf
+*.ldf
+
+# Ignore các file metadata của Unity
+Assets/**/*.meta
+
+# Nếu bạn dùng Rider hoặc VS Code, ignore thêm:
+.idea/
+*.iml
+.vscode/
+.vs/
+
+# Nếu có thêm plugin hoặc package nào không muốn push lên, thêm vào đây
