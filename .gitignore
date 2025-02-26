@@ -1,14 +1,16 @@
-# Ignore tất cả thư mục hệ thống không cần thiết
+# Ignore Unity system folders that should not be pushed
 .vs/
 Library/
 Logs/
 obj/
 Temp/
 UserSettings/
-Packages/
+
+# Do NOT ignore Packages (needed for dependencies)
+# Packages/
 ProjectSettings/EditorBuildSettings.asset
 
-# Ignore file của Unity mà không cần thiết để push lên GitHub
+# Ignore unnecessary Unity files
 *.csproj
 *.unityproj
 *.sln
@@ -19,7 +21,7 @@ ProjectSettings/EditorBuildSettings.asset
 *.booproj
 *.svd
 
-# Ignore file build output
+# Ignore build output files
 Builds/
 Build/
 ExportedObj/
@@ -27,7 +29,7 @@ ExportedObj/
 *.aab
 *.unitypackage
 
-# Ignore cache của Unity và các file tạm
+# Ignore cache and temporary files
 .DS_Store
 *.swp
 *.lock
@@ -40,13 +42,10 @@ ExportedObj/
 *.mdf
 *.ldf
 
-# Ignore các file metadata của Unity
-Assets/**/*.meta
-
-# Nếu bạn dùng Rider hoặc VS Code, ignore thêm:
+# If using Rider or VS Code
 .idea/
 *.iml
 .vscode/
 .vs/
 
-# Nếu có thêm plugin hoặc package nào không muốn push lên, thêm vào đây
+# Add other plugins or package-specific ignores here if needed
