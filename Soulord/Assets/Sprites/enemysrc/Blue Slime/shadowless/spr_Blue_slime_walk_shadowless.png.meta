@@ -1,31 +1,25 @@
 fileFormatVersion: 2
-guid: f12bebc80fddc2e4498742ec499a3794
+guid: 46ceb8bff07255d42bcdf69421b061e7
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: 1274453358364290171
-    second: warliegez_0
+      213: -6287475437235046940
+    second: spr_Blue_slime_walk_shadowless_0
   - first:
-      213: -2419747695134219341
-    second: warliegez_1
+      213: 6705516385148845840
+    second: spr_Blue_slime_walk_shadowless_1
   - first:
-      213: -639154815241268307
-    second: warliegez_2
+      213: 6710787623464516190
+    second: spr_Blue_slime_walk_shadowless_2
   - first:
-      213: 3268626140404704928
-    second: warliegez_3
+      213: -2358669292950313849
+    second: spr_Blue_slime_walk_shadowless_3
   - first:
-      213: -5573796544098013928
-    second: warliegez_4
+      213: 8708781184589273952
+    second: spr_Blue_slime_walk_shadowless_4
   - first:
-      213: 6086397548425579818
-    second: warliegez_5
-  - first:
-      213: -8794108173789859036
-    second: warliegez_6
-  - first:
-      213: 8590164958721170664
-    second: warliegez_7
+      213: 8443330269822787477
+    second: spr_Blue_slime_walk_shadowless_5
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -58,7 +52,7 @@ TextureImporter:
   maxTextureSize: 2048
   textureSettings:
     serializedVersion: 2
-    filterMode: 0
+    filterMode: 1
     aniso: 1
     mipBias: 0
     wrapU: 1
@@ -72,7 +66,7 @@ TextureImporter:
   spriteMeshType: 1
   alignment: 0
   spritePivot: {x: 0.5, y: 0.5}
-  spritePixelsToUnits: 64
+  spritePixelsToUnits: 100
   spriteBorder: {x: 0, y: 0, z: 0, w: 0}
   spriteGenerateFallbackPhysicsShape: 1
   alphaUsage: 1
@@ -96,7 +90,7 @@ TextureImporter:
     maxTextureSize: 2048
     resizeAlgorithm: 0
     textureFormat: -1
-    textureCompression: 0
+    textureCompression: 1
     compressionQuality: 50
     crunchedCompression: 0
     allowsAlphaSplitting: 0
@@ -134,177 +128,133 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: warliegez_0
+      name: spr_Blue_slime_walk_shadowless_0
       rect:
         serializedVersion: 2
-        x: 0
-        y: 2
-        width: 238
-        height: 194
-      alignment: 9
-      pivot: {x: 0.5933708, y: 0.15635712}
+        x: 24
+        y: 25
+        width: 16
+        height: 14
+      alignment: 0
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: b7c6b1cb394cfa110800000000000000
-      internalID: 1274453358364290171
+      spriteID: 4e57c9df6666eb8a0800000000000000
+      internalID: -6287475437235046940
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: warliegez_1
+      name: spr_Blue_slime_walk_shadowless_1
       rect:
         serializedVersion: 2
-        x: 245
-        y: 2
-        width: 238
-        height: 194
-      alignment: 9
-      pivot: {x: 0.5726218, y: 0.14362982}
+        x: 87
+        y: 24
+        width: 17
+        height: 14
+      alignment: 0
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 3b36479aa445b6ed0800000000000000
-      internalID: -2419747695134219341
+      spriteID: 01fbb5cff97ce0d50800000000000000
+      internalID: 6705516385148845840
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: warliegez_2
+      name: spr_Blue_slime_walk_shadowless_2
       rect:
         serializedVersion: 2
-        x: 476
-        y: 0
-        width: 238
-        height: 194
-      alignment: 9
-      pivot: {x: 0.6037454, y: 0.15635698}
+        x: 151
+        y: 24
+        width: 17
+        height: 15
+      alignment: 0
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: da35019f4144127f0800000000000000
-      internalID: -639154815241268307
+      spriteID: e5ab0bbc9c1812d50800000000000000
+      internalID: 6710787623464516190
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: warliegez_3
+      name: spr_Blue_slime_walk_shadowless_3
       rect:
         serializedVersion: 2
-        x: 712
-        y: 2
-        width: 238
-        height: 194
-      alignment: 9
-      pivot: {x: 0.6141201, y: 0.19453955}
+        x: 215
+        y: 24
+        width: 17
+        height: 15
+      alignment: 0
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 0a6e062282e7c5d20800000000000000
-      internalID: 3268626140404704928
+      spriteID: 784231b56c2544fd0800000000000000
+      internalID: -2358669292950313849
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: warliegez_4
+      name: spr_Blue_slime_walk_shadowless_4
       rect:
         serializedVersion: 2
-        x: 952
-        y: 2
-        width: 238
-        height: 194
-      alignment: 9
-      pivot: {x: 0.61411935, y: 0.19454002}
+        x: 280
+        y: 24
+        width: 16
+        height: 14
+      alignment: 0
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 81decba0395e5a2b0800000000000000
-      internalID: -5573796544098013928
+      spriteID: 06b9c06a85ecbd870800000000000000
+      internalID: 8708781184589273952
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: warliegez_5
+      name: spr_Blue_slime_walk_shadowless_5
       rect:
         serializedVersion: 2
-        x: 1190
-        y: 2
-        width: 238
-        height: 194
-      alignment: 9
-      pivot: {x: 0.62449425, y: 0.16908443}
+        x: 344
+        y: 24
+        width: 16
+        height: 15
+      alignment: 0
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: a2d07bbb25a377450800000000000000
-      internalID: 6086397548425579818
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: warliegez_6
-      rect:
-        serializedVersion: 2
-        x: 1428
-        y: 2
-        width: 238
-        height: 194
-      alignment: 9
-      pivot: {x: 0.6348692, y: 0.19453955}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: 42375e8853d05f580800000000000000
-      internalID: -8794108173789859036
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: warliegez_7
-      rect:
-        serializedVersion: 2
-        x: 1666
-        y: 2
-        width: 238
-        height: 194
-      alignment: 9
-      pivot: {x: 0.64524364, y: 0.18181223}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: 8ec559e6485663770800000000000000
-      internalID: 8590164958721170664
+      spriteID: 59f171e452cbc2570800000000000000
+      internalID: 8443330269822787477
       vertices: []
       indices: 
       edges: []
@@ -313,7 +263,7 @@ TextureImporter:
     customData: 
     physicsShape: []
     bones: []
-    spriteID: b68208e2da980574fbff129527226346
+    spriteID: 
     internalID: 0
     vertices: []
     indices: 
@@ -322,15 +272,7 @@ TextureImporter:
     secondaryTextures: []
     spriteCustomMetadata:
       entries: []
-    nameFileIdTable:
-      warliegez_0: 1274453358364290171
-      warliegez_1: -2419747695134219341
-      warliegez_2: -639154815241268307
-      warliegez_3: 3268626140404704928
-      warliegez_4: -5573796544098013928
-      warliegez_5: 6086397548425579818
-      warliegez_6: -8794108173789859036
-      warliegez_7: 8590164958721170664
+    nameFileIdTable: {}
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
