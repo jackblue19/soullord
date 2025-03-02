@@ -108,7 +108,7 @@ TextureImporter:
   spriteMeshType: 1
   alignment: 0
   spritePivot: {x: 0.5, y: 0.5}
-  spritePixelsToUnits: 100
+  spritePixelsToUnits: 16
   spriteBorder: {x: 0, y: 0, z: 0, w: 0}
   spriteGenerateFallbackPhysicsShape: 1
   alphaUsage: 1
@@ -622,7 +622,27 @@ TextureImporter:
     secondaryTextures: []
     spriteCustomMetadata:
       entries: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      spr_Blue_slime_attack_0: -3529484664382159344
+      spr_Blue_slime_attack_1: -5048223591721065087
+      spr_Blue_slime_attack_10: -4263944490190795816
+      spr_Blue_slime_attack_11: 6579427868927421713
+      spr_Blue_slime_attack_12: 5069096781749399945
+      spr_Blue_slime_attack_13: -2525814312224773379
+      spr_Blue_slime_attack_14: 7578051565581373153
+      spr_Blue_slime_attack_15: -1146612378448261916
+      spr_Blue_slime_attack_16: 8587380214516945959
+      spr_Blue_slime_attack_17: 6674575846193274551
+      spr_Blue_slime_attack_18: -5093946391023785690
+      spr_Blue_slime_attack_19: 8637935402190893721
+      spr_Blue_slime_attack_2: -1043635249693406699
+      spr_Blue_slime_attack_3: -4555020414000634115
+      spr_Blue_slime_attack_4: -983264889815780976
+      spr_Blue_slime_attack_5: -5958352419123694897
+      spr_Blue_slime_attack_6: 6688923432856907823
+      spr_Blue_slime_attack_7: -4382022280550477322
+      spr_Blue_slime_attack_8: -4806514478313635424
+      spr_Blue_slime_attack_9: -5062141689237285490
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

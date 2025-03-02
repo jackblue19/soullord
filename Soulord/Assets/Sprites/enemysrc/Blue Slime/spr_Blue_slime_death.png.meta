@@ -96,7 +96,7 @@ TextureImporter:
   spriteMeshType: 1
   alignment: 0
   spritePivot: {x: 0.5, y: 0.5}
-  spritePixelsToUnits: 100
+  spritePixelsToUnits: 16
   spriteBorder: {x: 0, y: 0, z: 0, w: 0}
   spriteGenerateFallbackPhysicsShape: 1
   alphaUsage: 1
@@ -522,7 +522,23 @@ TextureImporter:
     secondaryTextures: []
     spriteCustomMetadata:
       entries: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      spr_Blue_slime_death_0: -8200901892498111854
+      spr_Blue_slime_death_1: -1754464357842577133
+      spr_Blue_slime_death_10: -1679210457675017882
+      spr_Blue_slime_death_11: 8758965023753855236
+      spr_Blue_slime_death_12: -6224939199565097995
+      spr_Blue_slime_death_13: 5150278399154696995
+      spr_Blue_slime_death_14: 9173829646999779903
+      spr_Blue_slime_death_15: -1690440727067196122
+      spr_Blue_slime_death_2: -1487322115458562767
+      spr_Blue_slime_death_3: -1229299173627449536
+      spr_Blue_slime_death_4: -1892214485598068614
+      spr_Blue_slime_death_5: -7714650131097518625
+      spr_Blue_slime_death_6: -4829791081957174651
+      spr_Blue_slime_death_7: 3601058121002620560
+      spr_Blue_slime_death_8: -7385715455383069263
+      spr_Blue_slime_death_9: 4903358674880737019
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

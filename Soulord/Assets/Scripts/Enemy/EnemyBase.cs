@@ -6,18 +6,18 @@ public abstract class EnemyBase : MonoBehaviour
     public float health = 20f;
     public float moveSpeed = 2f;
     public float attackDamage = 1f;
-    public float detectionRange = 5f; // Phạm vi phát hiện player
+    public float detectionRange = 5f; 
     public LayerMask playerLayer;
 
     protected Transform player;
     protected Rigidbody2D rb;
-    protected EnemySpawner spawner; // Tham chiếu đến EnemySpawner
+    protected EnemySpawner spawner; 
 
     protected virtual void Start()
     {
         rb = GetComponent<Rigidbody2D>();
         player = GameObject.FindGameObjectWithTag("Player")?.transform;
-        spawner = FindObjectOfType<EnemySpawner>(); // Tìm EnemySpawner trong scene
+        spawner = FindObjectOfType<EnemySpawner>(); 
     }
 
     protected virtual void Update()
@@ -49,10 +49,10 @@ public abstract class EnemyBase : MonoBehaviour
 
     protected virtual void Die()
     {
-        // Drop loot
+        
         LootManager.Instance.DropLoot(transform.position);
 
-        // Thông báo cho EnemySpawner khi quái chết
+        
         if ( spawner != null )
         {
             spawner.OnEnemyDeath();
@@ -64,6 +64,6 @@ public abstract class EnemyBase : MonoBehaviour
     protected virtual void ChasePlayer()
     {
         Vector2 direction = (player.position - transform.position).normalized;
-        rb.linearVelocity = direction * moveSpeed; // Sửa từ `linearVelocity` thành `velocity`
+        rb.linearVelocity = direction * moveSpeed; 
     }
 }

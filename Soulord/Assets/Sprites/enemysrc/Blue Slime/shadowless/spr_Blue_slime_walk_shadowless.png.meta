@@ -272,7 +272,13 @@ TextureImporter:
     secondaryTextures: []
     spriteCustomMetadata:
       entries: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      spr_Blue_slime_walk_shadowless_0: -6287475437235046940
+      spr_Blue_slime_walk_shadowless_1: 6705516385148845840
+      spr_Blue_slime_walk_shadowless_2: 6710787623464516190
+      spr_Blue_slime_walk_shadowless_3: -2358669292950313849
+      spr_Blue_slime_walk_shadowless_4: 8708781184589273952
+      spr_Blue_slime_walk_shadowless_5: 8443330269822787477
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

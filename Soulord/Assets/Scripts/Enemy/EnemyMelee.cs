@@ -19,8 +19,8 @@
 
 //    protected override void Wander()
 //    {
-//        // Quái cận chiến không lang thang, đứng yên khi không thấy Player.
-//        rb.linearVelocity = Vector2.zero;
+//        // inherit from AIL -> random walking
+//        // rb.linearVelocity = Vector2.zero; // temp -> static
 //    }
 
 //    private void FixedUpdate()

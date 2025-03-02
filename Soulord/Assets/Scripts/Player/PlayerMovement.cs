@@ -1,5 +1,5 @@
 using UnityEngine;
-
+                        /*     auto-generate-code => may be removed     */
 public class PlayerMovement : MonoBehaviour
 {
     public float moveSpeed = 5f; 
@@ -13,9 +13,9 @@ public class PlayerMovement : MonoBehaviour
 
     private void Update()
     {
-        moveInput.x = Input.GetAxisRaw("Horizontal"); // Nhận input A/D (trái/phải)
-        moveInput.y = Input.GetAxisRaw("Vertical");   // Nhận input W/S (lên/xuống)
-        moveInput.Normalize(); // Đảm bảo di chuyển theo đường chéo không nhanh hơn
+        moveInput.x = Input.GetAxisRaw("Horizontal"); 
+        moveInput.y = Input.GetAxisRaw("Vertical");   
+        moveInput.Normalize(); 
     }
 
     private void FixedUpdate()

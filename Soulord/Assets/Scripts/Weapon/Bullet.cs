@@ -7,7 +7,7 @@ public class Bullet : MonoBehaviour
 
     private void Start()
     {
-        Destroy(gameObject , lifeTime); // Xóa đạn sau thời gian tồn tại
+        Destroy(gameObject , lifeTime); // bullet lifespan
     }
 
     private void OnTriggerEnter2D(Collider2D collision)
@@ -15,11 +15,11 @@ public class Bullet : MonoBehaviour
         if ( collision.CompareTag("Enemy") )
         {
             collision.GetComponent<EnemyBase>()?.TakeDamage(damage);
-            Destroy(gameObject); // Hủy đạn khi va chạm quái
+            Destroy(gameObject); 
         }
         else if ( collision.CompareTag("Wall") )
         {
-            Destroy(gameObject); // Đạn biến mất khi chạm tường
+            Destroy(gameObject); // if special buff => remove destroy -> bounce bullet
         }
     }
 }

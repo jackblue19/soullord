@@ -1,0 +1,312 @@
+fileFormatVersion: 2
+guid: 11b2804832fcd7040b4448865e746fbf
+TextureImporter:
+  internalIDToNameTable:
+  - first:
+      213: 5768707682448730334
+    second: SlimeBlue_0
+  - first:
+      213: -139900198575284219
+    second: SlimeBlue_1
+  - first:
+      213: -637681967022142092
+    second: SlimeBlue_2
+  - first:
+      213: 2701071092205909659
+    second: SlimeBlue_3
+  - first:
+      213: 43299986879216068
+    second: SlimeBlue_4
+  - first:
+      213: 4918196069723720227
+    second: SlimeBlue_5
+  - first:
+      213: 7620015581227022051
+    second: SlimeBlue_6
+  externalObjects: {}
+  serializedVersion: 13
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+    flipGreenChannel: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  ignoreMipmapLimit: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 0
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 16
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  swizzle: 50462976
+  cookieLightType: 0
+  platformSettings:
+  - serializedVersion: 4
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 0
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: WebGL
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: SlimeBlue_0
+      rect:
+        serializedVersion: 2
+        x: 1
+        y: 3
+        width: 192
+        height: 189
+      alignment: 9
+      pivot: {x: 0.53374296, y: 0.17435256}
+      border: {x: 0, y: 0, z: 0, w: 74}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: ed86c61c2119e0050800000000000000
+      internalID: 5768707682448730334
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SlimeBlue_1
+      rect:
+        serializedVersion: 2
+        x: 192
+        y: 3
+        width: 192
+        height: 189
+      alignment: 9
+      pivot: {x: 0.5337431, y: 0.15721326}
+      border: {x: 0, y: 0, z: 0, w: 75}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 500e9e7b289fe0ef0800000000000000
+      internalID: -139900198575284219
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SlimeBlue_2
+      rect:
+        serializedVersion: 2
+        x: 384
+        y: 3
+        width: 192
+        height: 189
+      alignment: 9
+      pivot: {x: 0.52249545, y: 0.16863953}
+      border: {x: 0, y: 0, z: 0, w: 75}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 47d09fb21af7627f0800000000000000
+      internalID: -637681967022142092
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SlimeBlue_3
+      rect:
+        serializedVersion: 2
+        x: 576
+        y: 3
+        width: 192
+        height: 189
+      alignment: 9
+      pivot: {x: 0.51124763, y: 0.1686393}
+      border: {x: 0, y: 0, z: 0, w: 74}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: b967204f8d12c7520800000000000000
+      internalID: 2701071092205909659
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SlimeBlue_4
+      rect:
+        serializedVersion: 2
+        x: 769
+        y: 3
+        width: 192
+        height: 189
+      alignment: 9
+      pivot: {x: 0.5, y: 0.16292629}
+      border: {x: 0, y: 0, z: 0, w: 74}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 4c9f6b0db15d99000800000000000000
+      internalID: 43299986879216068
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SlimeBlue_5
+      rect:
+        serializedVersion: 2
+        x: 960
+        y: 3
+        width: 192
+        height: 189
+      alignment: 9
+      pivot: {x: 0.5, y: 0.16863953}
+      border: {x: 0, y: 0, z: 0, w: 74}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 32aca978441f04440800000000000000
+      internalID: 4918196069723720227
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SlimeBlue_6
+      rect:
+        serializedVersion: 2
+        x: 1152
+        y: 3
+        width: 192
+        height: 189
+      alignment: 9
+      pivot: {x: 0.51124763, y: 0.16863953}
+      border: {x: 0, y: 0, z: 0, w: 75}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 3e67afd6ccbbfb960800000000000000
+      internalID: 7620015581227022051
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    customData: 
+    physicsShape: []
+    bones: []
+    spriteID: 96dd30c5b106a3a4baf54da3a5c2c889
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+    spriteCustomMetadata:
+      entries: []
+    nameFileIdTable:
+      SlimeBlue_0: 5768707682448730334
+      SlimeBlue_1: -139900198575284219
+      SlimeBlue_2: -637681967022142092
+      SlimeBlue_3: 2701071092205909659
+      SlimeBlue_4: 43299986879216068
+      SlimeBlue_5: 4918196069723720227
+      SlimeBlue_6: 7620015581227022051
+  mipmapLimitGroupName: 
+  pSDRemoveMatte: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

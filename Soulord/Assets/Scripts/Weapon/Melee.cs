@@ -10,7 +10,7 @@ public class Melee : Weapon
         if ( Time.time < nextAttackTime ) return;
         nextAttackTime = Time.time + 1f / attackRate;
 
-        // Tạo vòng tròn để kiểm tra kẻ địch trong phạm vi
+        // temp circle for radar enemies -> adding raycast + l.o.s
         Collider2D[] hitEnemies = Physics2D.OverlapCircleAll(attackPoint.position , attackRange , enemyLayer);
 
         foreach ( Collider2D enemy in hitEnemies )
@@ -18,7 +18,7 @@ public class Melee : Weapon
             enemy.GetComponent<EnemyBase>()?.TakeDamage(damage);
         }
 
-        // TODO: Thêm animation chém
+        // TODO -> add animation for slash
     }
 
     private void OnDrawGizmosSelected()

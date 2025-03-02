@@ -19,7 +19,6 @@ public class EnemyRanged : EnemyBase
 
     protected override void Wander()
     {
-        // Quái tầm xa cũng đứng yên khi không thấy Player
         rb.linearVelocity = Vector2.zero;
     }
 

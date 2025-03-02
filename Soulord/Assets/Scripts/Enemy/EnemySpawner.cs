@@ -11,7 +11,7 @@ public class EnemySpawner : MonoBehaviour
     private void Start()
     {
         wall = FindObjectOfType<WallController>();
-        wall.LockWall(); // Khóa tường khi vào bãi quái
+        wall.LockWall(); 
         SpawnEnemies();
     }
 
@@ -30,7 +30,7 @@ public class EnemySpawner : MonoBehaviour
         currentEnemies--;
         if ( currentEnemies <= 0 )
         {
-            wall.UnlockWall(); // Mở tường khi tiêu diệt hết quái
+            wall.UnlockWall(); 
         }
     }
 }

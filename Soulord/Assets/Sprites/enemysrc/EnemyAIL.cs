@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class EnemyAIL : MonoBehaviour
 {
-    private enum State {
+    private enum State { 
         Roaming
     }
 

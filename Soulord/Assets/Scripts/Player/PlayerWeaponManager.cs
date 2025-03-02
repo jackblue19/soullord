@@ -1,3 +1,4 @@
+using System;
 using UnityEngine;
 
 public class PlayerWeaponManager : MonoBehaviour
@@ -41,9 +42,14 @@ public class PlayerWeaponManager : MonoBehaviour
     {
         if ( currentWeapon != null )
         {
-            Destroy(currentWeapon); // Xóa vũ khí cũ trước khi nhặt vũ khí mới
+            // new -> drop down current object (weapon) 
         }
 
         currentWeapon = Instantiate(weapon , transform.position , Quaternion.identity , transform);
+    }
+
+    internal void PickupWeapon(GameObject gameObject)
+    {
+        throw new NotImplementedException();
     }
 }

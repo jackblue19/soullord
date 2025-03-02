@@ -4,8 +4,8 @@
 //{
 //    public Transform attackPoint;
 //    public GameObject bulletPrefab;
-//    public float meleeAttackRate = 1.0f; // 1 đòn mỗi giây
-//    public float rangedAttackRate = 0.5f; // 2 phát mỗi giây
+//    public float meleeAttackRate = 1.0f; 
+//    public float rangedAttackRate = 0.5f; 
 //    private float nextAttackTime = 0f;
 //    private PlayerWeaponManager weaponManager;
 
@@ -41,7 +41,7 @@
 //    private void MeleeAttack()
 //    {
 //        Debug.Log("Melee Attack!");
-//        // Thêm animation hoặc hiệu ứng đánh cận chiến tại đây
+//        // => more animation of melee
 //    }
 
 //    private void RangedAttack()

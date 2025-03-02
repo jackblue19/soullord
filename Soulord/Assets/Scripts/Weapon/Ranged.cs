@@ -4,7 +4,7 @@
 //{
 //    public GameObject bulletPrefab;
 //    public float bulletSpeed = 10f;
-//    public int manaCost = 5; // Tiêu hao mana khi bắn
+//    public int manaCost = 5; 
 
 //    public override void Attack()
 //    {
@@ -12,7 +12,7 @@
 //        nextAttackTime = Time.time + 1f / attackRate;
 
 //        PlayerMana playerMana = FindObjectOfType<PlayerMana>();
-//        if ( playerMana.currentMana < manaCost ) return; // Không đủ mana thì không bắn
+//        if ( playerMana.currentMana < manaCost ) return; // out of mana
 
 //        playerMana.UseMana(manaCost);
 

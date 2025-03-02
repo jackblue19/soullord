@@ -147,7 +147,8 @@ TextureImporter:
     secondaryTextures: []
     spriteCustomMetadata:
       entries: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      chimboica_0: -5118156098834620566
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

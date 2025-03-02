@@ -497,7 +497,22 @@ TextureImporter:
     secondaryTextures: []
     spriteCustomMetadata:
       entries: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      spr_Blue_slime_attack_shadowless_0: -1907266970462212467
+      spr_Blue_slime_attack_shadowless_1: -2983000939323801075
+      spr_Blue_slime_attack_shadowless_10: 3643070393245945377
+      spr_Blue_slime_attack_shadowless_11: -6246523399866631197
+      spr_Blue_slime_attack_shadowless_12: -399994078631193926
+      spr_Blue_slime_attack_shadowless_13: 5518063504283408768
+      spr_Blue_slime_attack_shadowless_14: -7581239822243133376
+      spr_Blue_slime_attack_shadowless_2: 2391053447328854358
+      spr_Blue_slime_attack_shadowless_3: -3465673826514914166
+      spr_Blue_slime_attack_shadowless_4: -1777012204516328785
+      spr_Blue_slime_attack_shadowless_5: 8372420336106926311
+      spr_Blue_slime_attack_shadowless_6: 7272358764954875343
+      spr_Blue_slime_attack_shadowless_7: -5083900248959041543
+      spr_Blue_slime_attack_shadowless_8: -6471745567992017187
+      spr_Blue_slime_attack_shadowless_9: -7176940228113599865
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

@@ -222,7 +222,11 @@ TextureImporter:
     secondaryTextures: []
     spriteCustomMetadata:
       entries: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      spr_Blue_slime_hurt_shadowless_0: 592320145262061011
+      spr_Blue_slime_hurt_shadowless_1: -8678967581002159052
+      spr_Blue_slime_hurt_shadowless_2: -6183331208376146369
+      spr_Blue_slime_hurt_shadowless_3: -1744014839622924780
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

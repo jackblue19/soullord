@@ -147,7 +147,8 @@ TextureImporter:
     secondaryTextures: []
     spriteCustomMetadata:
       entries: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      warliege_0: -6719166550762031289
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
