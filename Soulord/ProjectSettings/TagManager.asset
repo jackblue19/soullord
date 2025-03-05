@@ -43,5 +43,11 @@ TagManager:
   - name: Default
     uniqueID: 0
     locked: 0
+  - name: Player
+    uniqueID: 4121197847
+    locked: 0
+  - name: HpBar
+    uniqueID: 4155095973
+    locked: 0
   m_RenderingLayers:
   - Default

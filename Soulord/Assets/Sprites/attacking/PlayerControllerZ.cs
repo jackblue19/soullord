@@ -1,10 +1,26 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class PlayerControllerZ : MonoBehaviour
 {
     [SerializeField] private float moveSpeed = 1f;
+
+    //hp
+    [SerializeField] private float maxHp = 100f;
+    private float currentHp;
+    [SerializeField] private Image hpBar;
+
+    //shield
+    [SerializeField] private float maxShield = 40f;
+    private float currentShield;
+    [SerializeField] private Image ShieldBar;
+
+    //Stamina
+    [SerializeField] private float maxStamina = 100f;
+    private float currentStamina;
+    [SerializeField] private Image StaminaBar;
 
     private PlayerControls playerControls;
     private Vector2 movement;
@@ -25,6 +41,15 @@ public class PlayerControllerZ : MonoBehaviour
         rb = GetComponent<Rigidbody2D>();
         myAnimator = GetComponent<Animator>();
         mySpriteRender = GetComponent<SpriteRenderer>();
+    }
+    private void Start()
+    {
+        currentHp = maxHp;
+        currentShield = maxShield;
+        currentStamina = maxStamina;
+        UpdateShieldBar();
+        UpdateHpBar();
+        UpdateStaminaBar();
     }
 
     private void OnEnable()
@@ -70,6 +95,56 @@ public class PlayerControllerZ : MonoBehaviour
         {
             mySpriteRender.flipX = false;
             FacingLeft = false;
+        }
+    }
+
+    private void UpdateHpBar ()
+    {
+        if (hpBar != null)
+        {
+            hpBar.fillAmount = currentHp / maxHp;
+        }
+    }
+
+    private void UpdateShieldBar()
+    {
+        if (ShieldBar != null)
+        {
+            ShieldBar.fillAmount = currentShield / maxShield;
+        }
+    }
+
+    public virtual void TakeDame(float damage)
+    {
+        if (currentShield <= 0)
+        {
+            currentHp -= damage;
+            currentHp = Mathf.Max(currentHp, 0);
+            UpdateHpBar();
+            if (currentHp <= 0)
+            {
+                Die();
+            }
+        }
+        else
+        {
+            currentShield -= damage;
+            currentShield = Mathf.Max(currentShield, 0);
+            UpdateShieldBar();
+        }
+
+    }
+
+    public void Die()
+    {
+        Destroy(gameObject);
+    }
+
+    private void UpdateStaminaBar()
+    {
+        if (StaminaBar != null)
+        {
+            StaminaBar.fillAmount = currentStamina / maxStamina;
         }
     }
 }

@@ -17,7 +17,7 @@ public abstract class EnemyBase : MonoBehaviour
     {
         rb = GetComponent<Rigidbody2D>();
         player = GameObject.FindGameObjectWithTag("Player")?.transform;
-        spawner = FindObjectOfType<EnemySpawner>(); 
+        spawner = FindAnyObjectByType<EnemySpawner>(); 
     }
 
     protected virtual void Update()
