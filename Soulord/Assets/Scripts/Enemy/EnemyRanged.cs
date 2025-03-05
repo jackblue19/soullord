@@ -7,7 +7,6 @@ public class EnemyRanged : EnemyBase
     public float attackCooldown = 1.5f;
     private float nextAttackTime = 0f;
 
-    [System.Obsolete]
     protected override void Attack()
     {
         if ( Time.time < nextAttackTime ) return;

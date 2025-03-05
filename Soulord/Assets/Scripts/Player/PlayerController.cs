@@ -1,9 +1,9 @@
 //using UnityEngine;
 //using UnityEngine.InputSystem;
 
-            /*     Src -> PlayerControllerZ     */
+///*     Src -> PlayerControllerZ     */
 
-//public class PlayerControllerZ : MonoBehaviour
+//public class PlayerController : MonoBehaviour
 //{
 //    [SerializeField] private float moveSpeed = 1.0f;
 //    private PlayerControls playerControls;
@@ -31,7 +31,7 @@
 
 //    private void FixedUpdate()
 //    {
-//        if ( movement != null )
+//        if (movement != null)
 //        {
 //            movement = movement.normalized;
 //        }
@@ -43,8 +43,8 @@
 //    {
 //        movement = playerControls.Movement.Move.ReadValue<Vector2>();
 
-//        myAnimator.SetFloat("moveX" , movement.x);
-//        myAnimator.SetFloat("moveY" , movement.y);
+//        myAnimator.SetFloat("moveX", movement.x);
+//        myAnimator.SetFloat("moveY", movement.y);
 //    }
 //    private void Move()
 //    {
@@ -56,7 +56,7 @@
 //        Vector3 mousePos = Input.mousePosition;
 //        Vector3 playerScreenPoint = Camera.main.WorldToScreenPoint(transform.position);
 
-//        if ( mousePos.x < playerScreenPoint.x )
+//        if (mousePos.x < playerScreenPoint.x)
 //        {
 //            mySpriteRenderer.flipX = true;
 //        }

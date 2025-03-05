@@ -7,6 +7,7 @@ public class Sword : MonoBehaviour
     [SerializeField] private GameObject slashAnimPrefab;
     [SerializeField] private Transform slashAnimSpawnPoint;
     [SerializeField] private PolygonCollider2D swordCollider;
+    [SerializeField] private float damage = 10f;
     private Rigidbody2D swordRigidbody;
 
     private PlayerControls playerControls;
@@ -152,8 +153,13 @@ public class Sword : MonoBehaviour
         {
 
             // => remove follow mouse
-            Debug.Log("Sword hit the slime!");
 
+            EnemyAIL enemy = collision.gameObject.GetComponent<EnemyAIL>();
+            if (enemy != null)
+            {
+                Debug.Log("Sword hit the slime! "+ damage);
+                enemy.TakeDame(damage);
+            }
             Rigidbody2D slimeRigidbody = collision.gameObject.GetComponent<Rigidbody2D>();
             if ( slimeRigidbody != null )
             {
