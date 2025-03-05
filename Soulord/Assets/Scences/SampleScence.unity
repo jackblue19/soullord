@@ -283,11 +283,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 253cede583165b846bf0fceb991b2d02, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  moveSpeed: 1
-  movement: {x: 0, y: 0}
-  rb: {fileID: 0}
-  myAnimator: {fileID: 0}
-  mySpriteRenderer: {fileID: 0}
 --- !u!212 &192205290
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -1145,6 +1140,37 @@ Canvas:
   m_SortingLayerID: -139871323
   m_SortingOrder: 0
   m_TargetDisplay: 0
+--- !u!1 &657203629
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 657203630}
+  m_Layer: 0
+  m_Name: SlashSpawnPoint
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &657203630
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 657203629}
+  serializedVersion: 2
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 1.87, y: 1.32, z: 0.05236148}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 1562439543}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!4 &712301448 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 8569420143620608167, guid: b7b201149b3d95f4b94df71c148dff9f, type: 3}
@@ -1443,7 +1469,6 @@ GameObject:
   - component: {fileID: 1150959053}
   - component: {fileID: 1150959052}
   - component: {fileID: 1150959054}
-  - component: {fileID: 1150959055}
   - component: {fileID: 1150959056}
   m_Layer: 0
   m_Name: War_sword
@@ -1460,13 +1485,13 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1150959050}
   serializedVersion: 2
-  m_LocalRotation: {x: -0, y: -0, z: -0.047602918, w: 0.9988663}
-  m_LocalPosition: {x: 1.15, y: 1.6200004, z: 0}
+  m_LocalRotation: {x: -0, y: -0, z: -0.27804208, w: 0.96056896}
+  m_LocalPosition: {x: 1.35, y: 1.32, z: 0}
   m_LocalScale: {x: 0.18858927, y: 0.24214554, z: 0.23444079}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 1562439543}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: -5.457}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: -32.287}
 --- !u!95 &1150959052
 Animator:
   serializedVersion: 7
@@ -1556,106 +1581,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 808f4500e7de199478ef2460102a6a2d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  slashAnimPrefab: {fileID: 3201381521204790253, guid: 51ab863f53cacda4f80b288bdd762c08, type: 3}
-  slashAnimSpawnPoint: {fileID: 1322472514}
-  swordCollider: {fileID: 0}
+  slashAnimPrefab: {fileID: 6794223501276049952, guid: 8da054a467b52e24aa0dd17268bd2919, type: 3}
+  slashAnimSpawnPoint: {fileID: 657203630}
   damage: 10
   slashFlip: SlashChild
---- !u!60 &1150959055
-PolygonCollider2D:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1150959050}
-  m_Enabled: 1
-  serializedVersion: 3
-  m_Density: 1
-  m_Material: {fileID: 0}
-  m_IncludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ExcludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_LayerOverridePriority: 0
-  m_ForceSendLayers:
-    serializedVersion: 2
-    m_Bits: 4294967295
-  m_ForceReceiveLayers:
-    serializedVersion: 2
-    m_Bits: 4294967295
-  m_ContactCaptureLayers:
-    serializedVersion: 2
-    m_Bits: 4294967295
-  m_CallbackLayers:
-    serializedVersion: 2
-    m_Bits: 4294967295
-  m_IsTrigger: 1
-  m_UsedByEffector: 0
-  m_CompositeOperation: 0
-  m_CompositeOrder: 0
-  m_Offset: {x: 0, y: 0}
-  m_SpriteTilingProperty:
-    border: {x: 0, y: 0, z: 0, w: 0}
-    pivot: {x: 0.76081145, y: 0.29295087}
-    oldSize: {x: 12.1875, y: 11.625}
-    newSize: {x: 12.1875, y: 11.625}
-    adaptiveTilingThreshold: 0.5
-    drawMode: 0
-    adaptiveTiling: 0
-  m_AutoTiling: 0
-  m_Points:
-    m_Paths:
-    - - {x: 3.4272776, y: -1.3567796}
-      - {x: 3.0324187, y: -0.6101718}
-      - {x: 2.4960356, y: 0.3443696}
-      - {x: 2.4797509, y: 1.602159}
-      - {x: 2.380078, y: 1.9074086}
-      - {x: 2.1879816, y: 2.0720828}
-      - {x: 1.6550102, y: 2.700512}
-      - {x: -0.022389412, y: 2.4694462}
-      - {x: 1.6702237, y: 2.730281}
-      - {x: 2.6516562, y: 1.7101353}
-      - {x: 2.7480526, y: 2.2857876}
-      - {x: 3.1930501, y: 3.6881535}
-      - {x: 4.2324333, y: 2.156696}
-      - {x: 5.704159, y: -1.9616299}
-      - {x: 6.3117094, y: 1.2952943}
-      - {x: 5.892466, y: 2.1068478}
-      - {x: 8.251993, y: 2.9360678}
-      - {x: 6.4624977, y: 6.2745523}
-      - {x: 5.06242, y: 8.756397}
-      - {x: 3.4514017, y: 9.726647}
-      - {x: 2.3854847, y: 10.685641}
-      - {x: 1.2560593, y: 11.671269}
-      - {x: -1.1048778, y: 12.613535}
-      - {x: -6.299934, y: 13.545484}
-      - {x: -10.82702, y: 13.008489}
-      - {x: -12.42, y: 11.940764}
-      - {x: -13.184652, y: 11.505388}
-      - {x: -13.145718, y: 9.148525}
-      - {x: -13.732571, y: 6.8116913}
-      - {x: -10.51142, y: 3.4938757}
-      - {x: -7.7160926, y: 2.6385202}
-      - {x: -5.4598894, y: 2.6569462}
-      - {x: -5.8667164, y: 1.9927173}
-      - {x: -4.4598894, y: 1.6569462}
-      - {x: -5.299574, y: 1.3075633}
-      - {x: -3.9110317, y: 0.9199364}
-      - {x: -4.335895, y: 0.35100383}
-      - {x: -2.0798898, y: -1.2269455}
-      - {x: -0.8595482, y: -1.8407007}
-      - {x: -0.33016813, y: -2.6071153}
-      - {x: -0.69281316, y: -2.8214896}
-      - {x: 0.47237158, y: -3.5615532}
-      - {x: 2.2051153, y: -3.6761332}
-      - {x: 2.8643224, y: -3.6711836}
-      - {x: 3.62898, y: -2.2282875}
-      - {x: 4.472727, y: -2.5328145}
-    - - {x: -2.2723894, y: 2.2194462}
-      - {x: -2.2723894, y: 2.2194462}
-  m_UseDelaunayMesh: 0
 --- !u!50 &1150959056
 Rigidbody2D:
   serializedVersion: 5
@@ -1947,37 +1876,6 @@ RectTransform:
   m_CorrespondingSourceObject: {fileID: 4854540863798952431, guid: 6eb3281211a44a142a1f0cd4f36926f7, type: 3}
   m_PrefabInstance: {fileID: 1283269415}
   m_PrefabAsset: {fileID: 0}
---- !u!1 &1322472513
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 1322472514}
-  m_Layer: 0
-  m_Name: SlashSpawnPoint
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!4 &1322472514
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1322472513}
-  serializedVersion: 2
-  m_LocalRotation: {x: -0, y: -0, z: 0.27973107, w: 0.9600784}
-  m_LocalPosition: {x: 1.5600001, y: 1.1000001, z: 0}
-  m_LocalScale: {x: 1.0036244, y: 0.9249326, z: 1.029103}
-  m_ConstrainProportionsScale: 0
-  m_Children: []
-  m_Father: {fileID: 1562439543}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 32.488}
 --- !u!1 &1348198891
 GameObject:
   m_ObjectHideFlags: 0
@@ -2216,7 +2114,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 1150959051}
-  - {fileID: 1322472514}
+  - {fileID: 657203630}
   m_Father: {fileID: 1922452223}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1590367239
