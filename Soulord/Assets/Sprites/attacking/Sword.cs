@@ -98,7 +98,7 @@ public class Sword : MonoBehaviour
             EnemyAIL enemy = collision.gameObject.GetComponent<EnemyAIL>();
             if (enemy != null)
             {
-                Debug.Log("Sword hit the slime! "+ damage);
+                //Debug.Log("Sword hit the slime! "+ damage);
                 enemy.TakeDame(damage);
             }
             Rigidbody2D slimeRigidbody = collision.gameObject.GetComponent<Rigidbody2D>();
