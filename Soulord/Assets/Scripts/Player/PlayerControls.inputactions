@@ -100,6 +100,56 @@
                     "isPartOfComposite": false
                 }
             ]
+        },
+        {
+            "name": "PauseControls",
+            "id": "30422aed-fc84-4ef9-b05f-757fa8933c2a",
+            "actions": [
+                {
+                    "name": "BreakContinue",
+                    "type": "Button",
+                    "id": "e230d5dc-1728-46b4-99e7-dbe722fe4b30",
+                    "expectedControlType": "",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": false
+                }
+            ],
+            "bindings": [
+                {
+                    "name": "",
+                    "id": "72714769-f2ba-47db-b7eb-99c32e654c79",
+                    "path": "<Keyboard>/q",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "BreakContinue",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "3593c4bb-e128-4333-a5a2-a19ee87a33c5",
+                    "path": "<Keyboard>/escape",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "BreakContinue",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "c34d4afe-1d6b-4968-be1e-13539d854909",
+                    "path": "<Keyboard>/p",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "BreakContinue",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                }
+            ]
         }
     ],
     "controlSchemes": []
