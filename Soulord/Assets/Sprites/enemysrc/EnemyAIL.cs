@@ -69,6 +69,7 @@ public class EnemyAIL : MonoBehaviour
             lastShootTime = Time.time;
 
             GameObject bullet = Instantiate(bulletPrefab, bulletSpawnPoint.position, Quaternion.identity);
+            enemyBullet bulletScript = bullet.GetComponent<enemyBullet>();
 
             Rigidbody2D rb = bullet.GetComponent<Rigidbody2D>();
             if (rb == null)
@@ -83,6 +84,8 @@ public class EnemyAIL : MonoBehaviour
             bullet.transform.rotation = Quaternion.Euler(0, 0, angle);
 
             rb.linearVelocity = shootDirection * 10f;
+
+            bulletScript.SetDamage(enterDamage);
         }
     }
 

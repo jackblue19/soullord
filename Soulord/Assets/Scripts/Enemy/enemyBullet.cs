@@ -2,8 +2,8 @@ using UnityEngine;
 
 public class enemyBullet : MonoBehaviour
 {
-    [SerializeField] private float damage = 10f;
-    [SerializeField] private float lifetime = 1f;
+    private float damage;
+    [SerializeField] private float lifetime = 0.5f;
     [SerializeField] private float moveSpeed = 15f;
 
     private void Start()
@@ -19,6 +19,11 @@ public class enemyBullet : MonoBehaviour
     void MoveBullet()
     {
         transform.Translate(Vector2.right * moveSpeed * Time.deltaTime); //*Time.deltaTime
+    }
+
+    public void SetDamage(float damageAmount) 
+    {
+        damage = damageAmount;
     }
 
     private void OnTriggerEnter2D(Collider2D collision)

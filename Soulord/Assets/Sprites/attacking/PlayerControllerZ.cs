@@ -16,6 +16,8 @@ public class PlayerControllerZ : MonoBehaviour
     [SerializeField] private float maxShield = 40f;
     private float currentShield;
     [SerializeField] private Image ShieldBar;
+    private float lastDamageTime;
+    private bool isRegeneratingShield = false;
 
     //Stamina
     [SerializeField] private float maxStamina = 100f;
@@ -116,6 +118,7 @@ public class PlayerControllerZ : MonoBehaviour
 
     public virtual void TakeDame(float damage)
     {
+        lastDamageTime = Time.time;
         if (currentShield <= 0)
         {
             currentHp -= damage;
@@ -133,6 +136,31 @@ public class PlayerControllerZ : MonoBehaviour
             UpdateShieldBar();
         }
 
+        if (!isRegeneratingShield)
+        {
+            StartCoroutine(RegenerateShield());
+        }
+
+    }
+
+    private IEnumerator RegenerateShield()
+    {
+        isRegeneratingShield = true;
+
+        while (currentShield < maxShield)
+        {
+            yield return new WaitForSeconds(1f);
+
+            if (Time.time - lastDamageTime >= 3f)
+            {
+                currentShield = maxShield;
+                UpdateShieldBar();
+                isRegeneratingShield = false;
+                yield break;
+            }
+        }
+
+        isRegeneratingShield = false;
     }
 
     public void Die()

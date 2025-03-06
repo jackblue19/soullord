@@ -1,26 +1,41 @@
+using System.Collections;
 using UnityEngine;
 
 public class EnemySpawner : MonoBehaviour
 {
-    public GameObject[] enemyPrefabs;
+    [SerializeField] public GameObject[] enemyPrefabs;
+    [SerializeField] public Transform[] spawnPoints;
+    [SerializeField] public float timeBetweenSpawns = 2f;
     public int maxEnemies = 7;
     private int currentEnemies = 0;
     private WallController wall;
 
-    [System.Obsolete]
     private void Start()
     {
-        wall = FindObjectOfType<WallController>();
-        wall.LockWall(); 
-        SpawnEnemies();
+        wall = FindAnyObjectByType<WallController>();
+
+        if (wall != null)
+        {
+            wall.LockWall();
+        }
+        else
+        {
+            Debug.LogWarning("WallController do not exit!");
+        }
+
+        StartCoroutine( SpawnEnemies());
     }
 
-    private void SpawnEnemies()
+    private IEnumerator SpawnEnemies()
     {
         for ( int i = 0; i < maxEnemies; i++ )
         {
-            int randIndex = Random.Range(0 , enemyPrefabs.Length);
-            Instantiate(enemyPrefabs[randIndex] , transform.position + new Vector3(Random.Range(-3f , 3f) , Random.Range(-3f , 3f) , 0) , Quaternion.identity);
+            yield return new WaitForSeconds( timeBetweenSpawns );
+            int randIndex = Random.Range(0, enemyPrefabs.Length);
+            int spawnIndex = Random.Range(0, spawnPoints.Length);
+
+            Vector3 spawnPosition = spawnPoints[spawnIndex].position + new Vector3(Random.Range(-3f, 3f), Random.Range(-3f, 3f), 0);
+            Instantiate(enemyPrefabs[randIndex], spawnPosition, Quaternion.identity);
             currentEnemies++;
         }
     }
