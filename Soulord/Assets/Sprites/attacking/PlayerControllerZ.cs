@@ -35,12 +35,15 @@ public class PlayerControllerZ : MonoBehaviour
         set { facingLeft = value; }
     }
 
+    private static bool isPaused = false;
     private void Awake()
     {
         playerControls = new PlayerControls();
         rb = GetComponent<Rigidbody2D>();
         myAnimator = GetComponent<Animator>();
         mySpriteRender = GetComponent<SpriteRenderer>();
+
+        playerControls.PauseControls.BreakContinue.performed += ctx => TogglePause();
     }
     private void Start()
     {
@@ -145,6 +148,32 @@ public class PlayerControllerZ : MonoBehaviour
         if (StaminaBar != null)
         {
             StaminaBar.fillAmount = currentStamina / maxStamina;
+        }
+    }
+
+    private void TogglePause()
+    {
+        isPaused = !isPaused;
+
+        if ( isPaused )
+        {
+            Time.timeScale = 0; // Freezes all physics-based movement
+            FreezeAllAnimations(true);
+        }
+        else
+        {
+            Time.timeScale = 1; // Resumes physics
+            FreezeAllAnimations(false);
+        }
+    }
+
+    private void FreezeAllAnimations(bool freeze)
+    {
+        //Animator[] allAnimators = FindObjectsOfType<Animator>();
+        Animator[] allAnimators = FindObjectsByType<Animator>(FindObjectsSortMode.None);
+        foreach ( Animator anim in allAnimators )
+        {
+            anim.enabled = !freeze; // Disable animator when paused, enable when unpaused
         }
     }
 }

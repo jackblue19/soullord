@@ -122,6 +122,56 @@ public partial class @PlayerControls: IInputActionCollection2, IDisposable
                     ""isPartOfComposite"": false
                 }
             ]
+        },
+        {
+            ""name"": ""PauseControls"",
+            ""id"": ""30422aed-fc84-4ef9-b05f-757fa8933c2a"",
+            ""actions"": [
+                {
+                    ""name"": ""BreakContinue"",
+                    ""type"": ""Button"",
+                    ""id"": ""e230d5dc-1728-46b4-99e7-dbe722fe4b30"",
+                    ""expectedControlType"": """",
+                    ""processors"": """",
+                    ""interactions"": """",
+                    ""initialStateCheck"": false
+                }
+            ],
+            ""bindings"": [
+                {
+                    ""name"": """",
+                    ""id"": ""72714769-f2ba-47db-b7eb-99c32e654c79"",
+                    ""path"": ""<Keyboard>/q"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""BreakContinue"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""3593c4bb-e128-4333-a5a2-a19ee87a33c5"",
+                    ""path"": ""<Keyboard>/escape"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""BreakContinue"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""c34d4afe-1d6b-4968-be1e-13539d854909"",
+                    ""path"": ""<Keyboard>/p"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""BreakContinue"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                }
+            ]
         }
     ],
     ""controlSchemes"": []
@@ -132,12 +182,16 @@ public partial class @PlayerControls: IInputActionCollection2, IDisposable
         // Combat
         m_Combat = asset.FindActionMap("Combat", throwIfNotFound: true);
         m_Combat_MeleeAttack = m_Combat.FindAction("MeleeAttack", throwIfNotFound: true);
+        // PauseControls
+        m_PauseControls = asset.FindActionMap("PauseControls", throwIfNotFound: true);
+        m_PauseControls_BreakContinue = m_PauseControls.FindAction("BreakContinue", throwIfNotFound: true);
     }
 
     ~@PlayerControls()
     {
         UnityEngine.Debug.Assert(!m_Movement.enabled, "This will cause a leak and performance issues, PlayerControls.Movement.Disable() has not been called.");
         UnityEngine.Debug.Assert(!m_Combat.enabled, "This will cause a leak and performance issues, PlayerControls.Combat.Disable() has not been called.");
+        UnityEngine.Debug.Assert(!m_PauseControls.enabled, "This will cause a leak and performance issues, PlayerControls.PauseControls.Disable() has not been called.");
     }
 
     public void Dispose()
@@ -287,6 +341,52 @@ public partial class @PlayerControls: IInputActionCollection2, IDisposable
         }
     }
     public CombatActions @Combat => new CombatActions(this);
+
+    // PauseControls
+    private readonly InputActionMap m_PauseControls;
+    private List<IPauseControlsActions> m_PauseControlsActionsCallbackInterfaces = new List<IPauseControlsActions>();
+    private readonly InputAction m_PauseControls_BreakContinue;
+    public struct PauseControlsActions
+    {
+        private @PlayerControls m_Wrapper;
+        public PauseControlsActions(@PlayerControls wrapper) { m_Wrapper = wrapper; }
+        public InputAction @BreakContinue => m_Wrapper.m_PauseControls_BreakContinue;
+        public InputActionMap Get() { return m_Wrapper.m_PauseControls; }
+        public void Enable() { Get().Enable(); }
+        public void Disable() { Get().Disable(); }
+        public bool enabled => Get().enabled;
+        public static implicit operator InputActionMap(PauseControlsActions set) { return set.Get(); }
+        public void AddCallbacks(IPauseControlsActions instance)
+        {
+            if (instance == null || m_Wrapper.m_PauseControlsActionsCallbackInterfaces.Contains(instance)) return;
+            m_Wrapper.m_PauseControlsActionsCallbackInterfaces.Add(instance);
+            @BreakContinue.started += instance.OnBreakContinue;
+            @BreakContinue.performed += instance.OnBreakContinue;
+            @BreakContinue.canceled += instance.OnBreakContinue;
+        }
+
+        private void UnregisterCallbacks(IPauseControlsActions instance)
+        {
+            @BreakContinue.started -= instance.OnBreakContinue;
+            @BreakContinue.performed -= instance.OnBreakContinue;
+            @BreakContinue.canceled -= instance.OnBreakContinue;
+        }
+
+        public void RemoveCallbacks(IPauseControlsActions instance)
+        {
+            if (m_Wrapper.m_PauseControlsActionsCallbackInterfaces.Remove(instance))
+                UnregisterCallbacks(instance);
+        }
+
+        public void SetCallbacks(IPauseControlsActions instance)
+        {
+            foreach (var item in m_Wrapper.m_PauseControlsActionsCallbackInterfaces)
+                UnregisterCallbacks(item);
+            m_Wrapper.m_PauseControlsActionsCallbackInterfaces.Clear();
+            AddCallbacks(instance);
+        }
+    }
+    public PauseControlsActions @PauseControls => new PauseControlsActions(this);
     public interface IMovementActions
     {
         void OnMove(InputAction.CallbackContext context);
@@ -294,5 +394,9 @@ public partial class @PlayerControls: IInputActionCollection2, IDisposable
     public interface ICombatActions
     {
         void OnMeleeAttack(InputAction.CallbackContext context);
+    }
+    public interface IPauseControlsActions
+    {
+        void OnBreakContinue(InputAction.CallbackContext context);
     }
 }
