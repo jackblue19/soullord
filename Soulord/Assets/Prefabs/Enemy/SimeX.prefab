@@ -90,6 +90,8 @@ GameObject:
   - component: {fileID: 109334508256862857}
   - component: {fileID: 2749826659879779435}
   - component: {fileID: 7259697961718756411}
+  - component: {fileID: 2002269687254039493}
+  - component: {fileID: 6409056425241745628}
   m_Layer: 0
   m_Name: SimeX
   m_TagString: Slime
@@ -245,14 +247,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a78e319b0e331be48938175b4a3a09d3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  maxHp: 50
+  maxHp: 30
   hpBar: {fileID: 2162508182295610704}
   enterDamage: 20
   stayDamage: 2
-  player: {fileID: 0}
-  detectionRange: 10
   shootingRange: 5
-  stopChasingDistance: 12
+  stopChasingDistance: 30
   obstacleLayer:
     serializedVersion: 2
     m_Bits: 0
@@ -294,6 +294,33 @@ Animator:
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorStateOnDisable: 0
   m_WriteDefaultValuesOnDisable: 0
+--- !u!114 &2002269687254039493
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2331814315995792885}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1dcaceeda791d9d41a351eaf8ec175bc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  knockBackTime: 0.1
+--- !u!114 &6409056425241745628
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2331814315995792885}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7a0e4e69d938bd642baffe5b389efe5f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  whiteFlashMat: {fileID: 2100000, guid: f10b284bc2a520343bcf8729122e55ec, type: 2}
+  restoreDefaultMatime: 0.1
 --- !u!1 &4475777015736448902
 GameObject:
   m_ObjectHideFlags: 0
