@@ -77,8 +77,8 @@ public class PlayerControllerZ : MonoBehaviour
     {
         movement = playerControls.Movement.Move.ReadValue<Vector2>();
 
-        myAnimator.SetFloat("moveX" , movement.x);
-        myAnimator.SetFloat("moveY" , movement.y);
+        myAnimator.SetFloat("moveX", movement.x);
+        myAnimator.SetFloat("moveY", movement.y);
     }
 
     private void Move()
@@ -91,7 +91,7 @@ public class PlayerControllerZ : MonoBehaviour
         Vector3 mousePos = Input.mousePosition;
         Vector3 playerScreenPoint = Camera.main.WorldToScreenPoint(transform.position);
 
-        if ( mousePos.x < playerScreenPoint.x )
+        if (mousePos.x < playerScreenPoint.x)
         {
             mySpriteRender.flipX = true;
             FacingLeft = true;
@@ -103,7 +103,7 @@ public class PlayerControllerZ : MonoBehaviour
         }
     }
 
-    private void UpdateHpBar ()
+    private void UpdateHpBar()
     {
         if (hpBar != null)
         {
@@ -127,10 +127,7 @@ public class PlayerControllerZ : MonoBehaviour
             currentHp -= damage;
             currentHp = Mathf.Max(currentHp, 0);
             UpdateHpBar();
-            if (currentHp <= 0)
-            {
-                Die();
-            }
+            Die();
         }
         else
         {
@@ -168,7 +165,10 @@ public class PlayerControllerZ : MonoBehaviour
 
     public void Die()
     {
-        Destroy(gameObject);
+        if (currentHp <= 0)
+        {
+            Destroy(gameObject);
+        }
     }
 
     private void UpdateStaminaBar()
@@ -183,7 +183,7 @@ public class PlayerControllerZ : MonoBehaviour
     {
         isPaused = !isPaused;
 
-        if ( isPaused )
+        if (isPaused)
         {
             Time.timeScale = 0; // Freezes all physics-based movement
             FreezeAllAnimations(true);
@@ -199,7 +199,7 @@ public class PlayerControllerZ : MonoBehaviour
     {
         //Animator[] allAnimators = FindObjectsOfType<Animator>();
         Animator[] allAnimators = FindObjectsByType<Animator>(FindObjectsSortMode.None);
-        foreach ( Animator anim in allAnimators )
+        foreach (Animator anim in allAnimators)
         {
             anim.enabled = !freeze; // Disable animator when paused, enable when unpaused
         }

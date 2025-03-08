@@ -90,6 +90,8 @@ GameObject:
   - component: {fileID: 6985292946747909554}
   - component: {fileID: 1511496696671876405}
   - component: {fileID: 2427286878954478588}
+  - component: {fileID: -7607063704971711356}
+  - component: {fileID: -2203489873700275140}
   m_Layer: 0
   m_Name: SlimeBlue
   m_TagString: Slime
@@ -230,18 +232,16 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a78e319b0e331be48938175b4a3a09d3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  maxHp: 100
+  maxHp: 60
   hpBar: {fileID: 5850584838808910898}
-  enterDamage: 30
+  enterDamage: 10
   stayDamage: 5
-  player: {fileID: 0}
-  detectionRange: 10
   shootingRange: 5
-  stopChasingDistance: 12
+  stopChasingDistance: 30
   obstacleLayer:
     serializedVersion: 2
     m_Bits: 0
-  bulletPrefab: {fileID: 3249934117176979735, guid: 6d9bff994dca9bf4a82f4b9915cc84e6, type: 3}
+  bulletPrefab: {fileID: 1047821296053379290, guid: a07fb992d80b32049bcdc607857a978a, type: 3}
   bulletSpawnPoint: {fileID: 3953327923410786707}
   shootCooldown: 2
 --- !u!114 &1511496696671876405
@@ -294,6 +294,33 @@ CapsuleCollider2D:
   m_Offset: {x: -0.28782287, y: 0.52940404}
   m_Size: {x: 8.097337, y: 6.067919}
   m_Direction: 0
+--- !u!114 &-7607063704971711356
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3560820266187751388}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1dcaceeda791d9d41a351eaf8ec175bc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  knockBackTime: 0.1
+--- !u!114 &-2203489873700275140
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3560820266187751388}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7a0e4e69d938bd642baffe5b389efe5f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  whiteFlashMat: {fileID: 2100000, guid: f10b284bc2a520343bcf8729122e55ec, type: 2}
+  restoreDefaultMatime: 0.1
 --- !u!1 &5363860943654677853
 GameObject:
   m_ObjectHideFlags: 0

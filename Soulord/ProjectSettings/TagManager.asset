@@ -43,11 +43,14 @@ TagManager:
   - name: Ground
     uniqueID: 1908257691
     locked: 0
-  - name: Grass
-    uniqueID: 3185183199
+  - name: Sea
+    uniqueID: 1013729095
     locked: 0
   - name: Rock
     uniqueID: 1876304177
+    locked: 0
+  - name: Grass
+    uniqueID: 3185183199
     locked: 0
   - name: Default
     uniqueID: 0
@@ -63,6 +66,12 @@ TagManager:
     locked: 0
   - name: HpBar
     uniqueID: 4155095973
+    locked: 0
+  - name: Tree
+    uniqueID: 2828499277
+    locked: 0
+  - name: Top
+    uniqueID: 293170867
     locked: 0
   m_RenderingLayers:
   - Default
