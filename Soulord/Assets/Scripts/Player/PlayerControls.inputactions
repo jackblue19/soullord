@@ -150,6 +150,34 @@
                     "isPartOfComposite": false
                 }
             ]
+        },
+        {
+            "name": "Skills",
+            "id": "994cc1ee-7cdb-4906-a0f1-73c06834ec2b",
+            "actions": [
+                {
+                    "name": "Special",
+                    "type": "Button",
+                    "id": "59b9292b-2f2d-4eea-82ac-0623144fa5a2",
+                    "expectedControlType": "",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": false
+                }
+            ],
+            "bindings": [
+                {
+                    "name": "",
+                    "id": "2283ba63-61fe-4c84-8daf-3f948f795268",
+                    "path": "<Keyboard>/g",
+                    "interactions": "Press",
+                    "processors": "",
+                    "groups": "",
+                    "action": "Special",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                }
+            ]
         }
     ],
     "controlSchemes": []
