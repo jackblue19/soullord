@@ -5,7 +5,7 @@ using UnityEngine.UI;
 
 public class PlayerControllerZ : MonoBehaviour
 {
-    [SerializeField] private float moveSpeed = 1f;
+    [SerializeField] private float moveSpeed = 50f;
 
     //hp
     [SerializeField] private float maxHp = 100f;
@@ -47,7 +47,7 @@ public class PlayerControllerZ : MonoBehaviour
         mySpriteRender = GetComponent<SpriteRenderer>();
 
         playerControls.PauseControls.BreakContinue.performed += ctx => TogglePause();
-        playerControls.Skills.Special.performed += ctx => PerformSpecialSkill();
+        playerControls.Skills.Special.performed += _ => PerformSpecialSkill();
     }
     private void Start()
     {
@@ -76,6 +76,11 @@ public class PlayerControllerZ : MonoBehaviour
         {
             Debug.Log("Player should be moving!");
         }
+        if ( Input.GetKeyDown(KeyCode.T) ) // Bấm T để tắt/bật Animator
+        {
+            myAnimator.enabled = !myAnimator.enabled;
+            Debug.Log("Animator: " + myAnimator.enabled);
+        }
     }
 
     private void FixedUpdate()
@@ -94,7 +99,10 @@ public class PlayerControllerZ : MonoBehaviour
 
     private void Move()
     {
-        rb.MovePosition(rb.position + movement * (moveSpeed * Time.fixedDeltaTime));
+        //rb.MovePosition(rb.position + movement * (moveSpeed * Time.fixedDeltaTime));
+        Vector2 scaledMovement = movement * 25f; // Tăng giá trị lên cao để kiểm tra
+        Debug.Log($"Scaled Movement: {scaledMovement}");
+        rb.MovePosition(rb.position + scaledMovement * Time.fixedDeltaTime);
     }
 
     private void AdjustPlayerFacingDirection()
@@ -216,7 +224,7 @@ public class PlayerControllerZ : MonoBehaviour
     {
         myAnimator.SetTrigger("specialTrigger");
 
-        yield return new WaitForSeconds(6f);
+        yield return new WaitForSeconds(3f);
 
         myAnimator.SetTrigger("idleTrigger");
     }
