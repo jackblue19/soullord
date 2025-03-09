@@ -38,6 +38,7 @@ public class PlayerControllerZ : MonoBehaviour
     }
 
     private static bool isPaused = false;
+
     private void Awake()
     {
         playerControls = new PlayerControls();
@@ -46,6 +47,7 @@ public class PlayerControllerZ : MonoBehaviour
         mySpriteRender = GetComponent<SpriteRenderer>();
 
         playerControls.PauseControls.BreakContinue.performed += ctx => TogglePause();
+        playerControls.Skills.Special.performed += ctx => PerformSpecialSkill();
     }
     private void Start()
     {
@@ -65,6 +67,15 @@ public class PlayerControllerZ : MonoBehaviour
     private void Update()
     {
         PlayerInput();
+        float moveX = Input.GetAxisRaw("Horizontal");
+        float moveY = Input.GetAxisRaw("Vertical");
+
+        Debug.Log($"MoveX: {moveX}, MoveY: {moveY}"); // Kiểm tra input
+
+        if ( moveX != 0 || moveY != 0 )
+        {
+            Debug.Log("Player should be moving!");
+        }
     }
 
     private void FixedUpdate()
@@ -185,14 +196,29 @@ public class PlayerControllerZ : MonoBehaviour
 
         if (isPaused)
         {
-            Time.timeScale = 0; // Freezes all physics-based movement
+            Time.timeScale = 0;
             FreezeAllAnimations(true);
         }
         else
         {
-            Time.timeScale = 1; // Resumes physics
+            Time.timeScale = 1;
             FreezeAllAnimations(false);
         }
+    }
+    private void PerformSpecialSkill()
+    {
+        if ( !myAnimator.GetCurrentAnimatorStateInfo(0).IsName("special") )
+        {
+            StartCoroutine(SpecialSkillRoutine());
+        }
+    }
+    private IEnumerator SpecialSkillRoutine()
+    {
+        myAnimator.SetTrigger("specialTrigger");
+
+        yield return new WaitForSeconds(6f);
+
+        myAnimator.SetTrigger("idleTrigger");
     }
 
     private void FreezeAllAnimations(bool freeze)
@@ -201,7 +227,7 @@ public class PlayerControllerZ : MonoBehaviour
         Animator[] allAnimators = FindObjectsByType<Animator>(FindObjectsSortMode.None);
         foreach (Animator anim in allAnimators)
         {
-            anim.enabled = !freeze; // Disable animator when paused, enable when unpaused
+            anim.enabled = !freeze; 
         }
     }
 }

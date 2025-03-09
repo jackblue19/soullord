@@ -172,6 +172,34 @@ public partial class @PlayerControls: IInputActionCollection2, IDisposable
                     ""isPartOfComposite"": false
                 }
             ]
+        },
+        {
+            ""name"": ""Skills"",
+            ""id"": ""994cc1ee-7cdb-4906-a0f1-73c06834ec2b"",
+            ""actions"": [
+                {
+                    ""name"": ""Special"",
+                    ""type"": ""Button"",
+                    ""id"": ""59b9292b-2f2d-4eea-82ac-0623144fa5a2"",
+                    ""expectedControlType"": """",
+                    ""processors"": """",
+                    ""interactions"": """",
+                    ""initialStateCheck"": false
+                }
+            ],
+            ""bindings"": [
+                {
+                    ""name"": """",
+                    ""id"": ""2283ba63-61fe-4c84-8daf-3f948f795268"",
+                    ""path"": ""<Keyboard>/g"",
+                    ""interactions"": ""Press"",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""Special"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                }
+            ]
         }
     ],
     ""controlSchemes"": []
@@ -185,6 +213,9 @@ public partial class @PlayerControls: IInputActionCollection2, IDisposable
         // PauseControls
         m_PauseControls = asset.FindActionMap("PauseControls", throwIfNotFound: true);
         m_PauseControls_BreakContinue = m_PauseControls.FindAction("BreakContinue", throwIfNotFound: true);
+        // Skills
+        m_Skills = asset.FindActionMap("Skills", throwIfNotFound: true);
+        m_Skills_Special = m_Skills.FindAction("Special", throwIfNotFound: true);
     }
 
     ~@PlayerControls()
@@ -192,6 +223,7 @@ public partial class @PlayerControls: IInputActionCollection2, IDisposable
         UnityEngine.Debug.Assert(!m_Movement.enabled, "This will cause a leak and performance issues, PlayerControls.Movement.Disable() has not been called.");
         UnityEngine.Debug.Assert(!m_Combat.enabled, "This will cause a leak and performance issues, PlayerControls.Combat.Disable() has not been called.");
         UnityEngine.Debug.Assert(!m_PauseControls.enabled, "This will cause a leak and performance issues, PlayerControls.PauseControls.Disable() has not been called.");
+        UnityEngine.Debug.Assert(!m_Skills.enabled, "This will cause a leak and performance issues, PlayerControls.Skills.Disable() has not been called.");
     }
 
     public void Dispose()
@@ -387,6 +419,52 @@ public partial class @PlayerControls: IInputActionCollection2, IDisposable
         }
     }
     public PauseControlsActions @PauseControls => new PauseControlsActions(this);
+
+    // Skills
+    private readonly InputActionMap m_Skills;
+    private List<ISkillsActions> m_SkillsActionsCallbackInterfaces = new List<ISkillsActions>();
+    private readonly InputAction m_Skills_Special;
+    public struct SkillsActions
+    {
+        private @PlayerControls m_Wrapper;
+        public SkillsActions(@PlayerControls wrapper) { m_Wrapper = wrapper; }
+        public InputAction @Special => m_Wrapper.m_Skills_Special;
+        public InputActionMap Get() { return m_Wrapper.m_Skills; }
+        public void Enable() { Get().Enable(); }
+        public void Disable() { Get().Disable(); }
+        public bool enabled => Get().enabled;
+        public static implicit operator InputActionMap(SkillsActions set) { return set.Get(); }
+        public void AddCallbacks(ISkillsActions instance)
+        {
+            if (instance == null || m_Wrapper.m_SkillsActionsCallbackInterfaces.Contains(instance)) return;
+            m_Wrapper.m_SkillsActionsCallbackInterfaces.Add(instance);
+            @Special.started += instance.OnSpecial;
+            @Special.performed += instance.OnSpecial;
+            @Special.canceled += instance.OnSpecial;
+        }
+
+        private void UnregisterCallbacks(ISkillsActions instance)
+        {
+            @Special.started -= instance.OnSpecial;
+            @Special.performed -= instance.OnSpecial;
+            @Special.canceled -= instance.OnSpecial;
+        }
+
+        public void RemoveCallbacks(ISkillsActions instance)
+        {
+            if (m_Wrapper.m_SkillsActionsCallbackInterfaces.Remove(instance))
+                UnregisterCallbacks(instance);
+        }
+
+        public void SetCallbacks(ISkillsActions instance)
+        {
+            foreach (var item in m_Wrapper.m_SkillsActionsCallbackInterfaces)
+                UnregisterCallbacks(item);
+            m_Wrapper.m_SkillsActionsCallbackInterfaces.Clear();
+            AddCallbacks(instance);
+        }
+    }
+    public SkillsActions @Skills => new SkillsActions(this);
     public interface IMovementActions
     {
         void OnMove(InputAction.CallbackContext context);
@@ -398,5 +476,9 @@ public partial class @PlayerControls: IInputActionCollection2, IDisposable
     public interface IPauseControlsActions
     {
         void OnBreakContinue(InputAction.CallbackContext context);
+    }
+    public interface ISkillsActions
+    {
+        void OnSpecial(InputAction.CallbackContext context);
     }
 }
