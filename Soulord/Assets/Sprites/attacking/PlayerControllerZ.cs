@@ -39,6 +39,10 @@ public class PlayerControllerZ : MonoBehaviour
 
     private static bool isPaused = false;
 
+    private CapsuleCollider2D normalCollider;
+    private CapsuleCollider2D specialCollider;
+
+
     private void Awake()
     {
         playerControls = new PlayerControls();
@@ -48,7 +52,25 @@ public class PlayerControllerZ : MonoBehaviour
 
         playerControls.PauseControls.BreakContinue.performed += ctx => TogglePause();
         playerControls.Skills.Special.performed += _ => PerformSpecialSkill();
+        GetCorrectCollider2D();
     }
+
+    private void GetCorrectCollider2D()
+    {
+        CapsuleCollider2D[] colliders = GetComponents<CapsuleCollider2D>();
+
+        if ( colliders.Length >= 2 )
+        {
+            normalCollider = colliders[0];
+            specialCollider = colliders[1];
+        }
+
+        if ( specialCollider != null )
+        {
+            specialCollider.enabled = false;
+        }
+    }
+
     private void Start()
     {
         currentHp = maxHp;
@@ -67,20 +89,8 @@ public class PlayerControllerZ : MonoBehaviour
     private void Update()
     {
         PlayerInput();
-        float moveX = Input.GetAxisRaw("Horizontal");
-        float moveY = Input.GetAxisRaw("Vertical");
-
-        Debug.Log($"MoveX: {moveX}, MoveY: {moveY}"); // Kiểm tra input
-
-        if ( moveX != 0 || moveY != 0 )
-        {
-            Debug.Log("Player should be moving!");
-        }
-        if ( Input.GetKeyDown(KeyCode.T) ) // Bấm T để tắt/bật Animator
-        {
-            myAnimator.enabled = !myAnimator.enabled;
-            Debug.Log("Animator: " + myAnimator.enabled);
-        }
+        //OnTriggerEnter2D(specialCollider);
+        //OnTriggerStay2D(specialCollider);
     }
 
     private void FixedUpdate()
@@ -93,8 +103,8 @@ public class PlayerControllerZ : MonoBehaviour
     {
         movement = playerControls.Movement.Move.ReadValue<Vector2>();
 
-        myAnimator.SetFloat("moveX", movement.x);
-        myAnimator.SetFloat("moveY", movement.y);
+        myAnimator.SetFloat("moveX" , movement.x);
+        myAnimator.SetFloat("moveY" , movement.y);
     }
 
     private void Move()
@@ -110,7 +120,7 @@ public class PlayerControllerZ : MonoBehaviour
         Vector3 mousePos = Input.mousePosition;
         Vector3 playerScreenPoint = Camera.main.WorldToScreenPoint(transform.position);
 
-        if (mousePos.x < playerScreenPoint.x)
+        if ( mousePos.x < playerScreenPoint.x )
         {
             mySpriteRender.flipX = true;
             FacingLeft = true;
@@ -124,7 +134,7 @@ public class PlayerControllerZ : MonoBehaviour
 
     private void UpdateHpBar()
     {
-        if (hpBar != null)
+        if ( hpBar != null )
         {
             hpBar.fillAmount = currentHp / maxHp;
         }
@@ -132,45 +142,48 @@ public class PlayerControllerZ : MonoBehaviour
 
     private void UpdateShieldBar()
     {
-        if (ShieldBar != null)
+        if ( ShieldBar != null )
         {
             ShieldBar.fillAmount = currentShield / maxShield;
         }
     }
 
+    private bool isInvincible = false;
+
     public virtual void TakeDame(float damage)
     {
+        if ( isInvincible ) return;
+
         lastDamageTime = Time.time;
-        if (currentShield <= 0)
+        if ( currentShield <= 0 )
         {
             currentHp -= damage;
-            currentHp = Mathf.Max(currentHp, 0);
+            currentHp = Mathf.Max(currentHp , 0);
             UpdateHpBar();
             Die();
         }
         else
         {
             currentShield -= damage;
-            currentShield = Mathf.Max(currentShield, 0);
+            currentShield = Mathf.Max(currentShield , 0);
             UpdateShieldBar();
         }
 
-        if (!isRegeneratingShield)
+        if ( !isRegeneratingShield )
         {
             StartCoroutine(RegenerateShield());
         }
-
     }
 
     private IEnumerator RegenerateShield()
     {
         isRegeneratingShield = true;
 
-        while (currentShield < maxShield)
+        while ( currentShield < maxShield )
         {
             yield return new WaitForSeconds(1f);
 
-            if (Time.time - lastDamageTime >= 3f)
+            if ( Time.time - lastDamageTime >= 3f )
             {
                 currentShield = maxShield;
                 UpdateShieldBar();
@@ -184,7 +197,7 @@ public class PlayerControllerZ : MonoBehaviour
 
     public void Die()
     {
-        if (currentHp <= 0)
+        if ( currentHp <= 0 )
         {
             Destroy(gameObject);
         }
@@ -192,7 +205,7 @@ public class PlayerControllerZ : MonoBehaviour
 
     private void UpdateStaminaBar()
     {
-        if (StaminaBar != null)
+        if ( StaminaBar != null )
         {
             StaminaBar.fillAmount = currentStamina / maxStamina;
         }
@@ -202,7 +215,7 @@ public class PlayerControllerZ : MonoBehaviour
     {
         isPaused = !isPaused;
 
-        if (isPaused)
+        if ( isPaused )
         {
             Time.timeScale = 0;
             FreezeAllAnimations(true);
@@ -223,19 +236,67 @@ public class PlayerControllerZ : MonoBehaviour
     private IEnumerator SpecialSkillRoutine()
     {
         myAnimator.SetTrigger("specialTrigger");
+        specialCollider.enabled = true;
+        isInvincible = true;
 
         yield return new WaitForSeconds(3f);
 
         myAnimator.SetTrigger("idleTrigger");
+        specialCollider.enabled = false;
+        isInvincible = false;
     }
 
     private void FreezeAllAnimations(bool freeze)
     {
         //Animator[] allAnimators = FindObjectsOfType<Animator>();
         Animator[] allAnimators = FindObjectsByType<Animator>(FindObjectsSortMode.None);
-        foreach (Animator anim in allAnimators)
+        foreach ( Animator anim in allAnimators )
         {
-            anim.enabled = !freeze; 
+            anim.enabled = !freeze;
         }
     }
+
+    //private void OnTriggerStay2D(Collider2D collision)
+    //{
+    //    if ( specialCollider != null && specialCollider.enabled && specialCollider.IsTouching(collision) )
+    //    {
+    //        if ( collision.CompareTag("Slime") )
+    //        {
+    //            EnemyAIL enemy = collision.GetComponent<EnemyAIL>();
+    //            if ( enemy != null )
+    //            {
+    //                enemy.TakeDame(30f);
+    //            }
+
+    //            Rigidbody2D slimeRigidbody = collision.GetComponent<Rigidbody2D>();
+    //            if ( slimeRigidbody != null )
+    //            {
+    //                Vector2 knockbackDirection = (collision.transform.position - transform.position).normalized;
+    //                slimeRigidbody.AddForce(knockbackDirection * 10f , ForceMode2D.Impulse);
+    //            }
+    //        }
+    //    }
+    //}
+    //private void OnTriggerEnter2D(Collider2D collision)
+    //{
+    //    if ( specialCollider != null && specialCollider.enabled && specialCollider.IsTouching(collision) )
+    //    {
+    //        if ( collision.CompareTag("Slime") )
+    //        {
+    //            EnemyAIL enemy = collision.GetComponent<EnemyAIL>();
+    //            if ( enemy != null )
+    //            {
+    //                enemy.TakeDame(30f);
+    //            }
+
+    //            Rigidbody2D slimeRigidbody = collision.GetComponent<Rigidbody2D>();
+    //            if ( slimeRigidbody != null )
+    //            {
+    //                Vector2 knockbackDirection = (collision.transform.position - transform.position).normalized;
+    //                slimeRigidbody.AddForce(knockbackDirection * 10f , ForceMode2D.Impulse);
+    //            }
+    //        }
+    //    }
+    //}
+
 }
