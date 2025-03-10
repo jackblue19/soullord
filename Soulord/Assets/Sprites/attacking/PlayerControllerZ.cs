@@ -118,10 +118,10 @@ public class PlayerControllerZ : MonoBehaviour
         //rb.MovePosition(rb.position + movement * (moveSpeed * Time.fixedDeltaTime));
         Vector2 scaledMovement = movement * 15f; // Tăng giá trị lên cao để kiểm tra
         // Nếu đang dash, tăng tốc độ
-        //if (isDashing)
-        //{
-        //    scaledMovement *= dashSpeed; // Nếu đang dash, nhân với dashSpeed
-        //}
+        if (isDashing)
+        {
+            scaledMovement *= dashSpeed; // Nếu đang dash, nhân với dashSpeed
+        }
         Debug.Log($"Scaled Movement: {scaledMovement}");
         rb.MovePosition(rb.position + scaledMovement * Time.fixedDeltaTime);
     }
@@ -156,7 +156,7 @@ public class PlayerControllerZ : MonoBehaviour
     private IEnumerator EndDashRoutine()
     {
         float dashTime = .2f;
-        float dashCD = .2f;
+        float dashCD = .25f;
         yield return new WaitForSeconds(dashTime);
         moveSpeed /= dashSpeed;
         myTrailRenderer.emitting = false;
