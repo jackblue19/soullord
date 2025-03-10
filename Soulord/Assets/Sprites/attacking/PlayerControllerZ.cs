@@ -5,7 +5,11 @@ using UnityEngine.UI;
 
 public class PlayerControllerZ : MonoBehaviour
 {
-    [SerializeField] private float moveSpeed = 50f;
+    [SerializeField] private float moveSpeed = 1f;
+    //dash
+    [SerializeField] private float dashSpeed = 2f;
+    [SerializeField] private TrailRenderer myTrailRenderer;
+
 
     //hp
     [SerializeField] private float maxHp = 100f;
@@ -31,12 +35,13 @@ public class PlayerControllerZ : MonoBehaviour
     private SpriteRenderer mySpriteRender;
 
     private bool facingLeft = false;
+    private bool isDashing = false; 
     public bool FacingLeft
     {
         get { return facingLeft; }
         set { facingLeft = value; }
     }
-
+    
     private static bool isPaused = false;
 
     private CapsuleCollider2D normalCollider;
@@ -79,6 +84,7 @@ public class PlayerControllerZ : MonoBehaviour
         UpdateShieldBar();
         UpdateHpBar();
         UpdateStaminaBar();
+        playerControls.Combat.Dash.performed += _ => Dash();
     }
 
     private void OnEnable()
@@ -110,7 +116,12 @@ public class PlayerControllerZ : MonoBehaviour
     private void Move()
     {
         //rb.MovePosition(rb.position + movement * (moveSpeed * Time.fixedDeltaTime));
-        Vector2 scaledMovement = movement * 25f; // Tăng giá trị lên cao để kiểm tra
+        Vector2 scaledMovement = movement * 15f; // Tăng giá trị lên cao để kiểm tra
+        // Nếu đang dash, tăng tốc độ
+        if (isDashing)
+        {
+            scaledMovement *= dashSpeed; // Nếu đang dash, nhân với dashSpeed
+        }
         Debug.Log($"Scaled Movement: {scaledMovement}");
         rb.MovePosition(rb.position + scaledMovement * Time.fixedDeltaTime);
     }
@@ -130,6 +141,26 @@ public class PlayerControllerZ : MonoBehaviour
             mySpriteRender.flipX = false;
             FacingLeft = false;
         }
+    }
+
+    private void Dash()
+    {
+        if (!isDashing)
+        {
+            isDashing = true;
+            moveSpeed *= dashSpeed;
+            myTrailRenderer.emitting = true;
+            StartCoroutine(EndDashRoutine());
+        }
+    }
+    private IEnumerator EndDashRoutine()
+    {
+        float dashTime = .2f;
+        float dashCD = .25f;
+        yield return new WaitForSeconds(dashTime);
+        moveSpeed /= dashSpeed;
+        myTrailRenderer.emitting = false;
+        isDashing = false;  
     }
 
     private void UpdateHpBar()
