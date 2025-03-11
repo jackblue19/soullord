@@ -14,7 +14,7 @@ public class EnemyHealthzz : MonoBehaviour
     public void TakeDamage(int damage)
     {
         currentHealth -= damage;
-        Debug.Log(currentHealth);
+        //Debug.Log(currentHealth);
         DetectDeath();
     }
 

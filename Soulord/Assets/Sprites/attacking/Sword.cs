@@ -44,7 +44,11 @@ public class Sword : MonoBehaviour
 
     private void Attack()
     {
-        myAnimator.SetTrigger("Attack");
+        //why??
+        if (myAnimator != null)
+        {
+            myAnimator.SetTrigger("Attack");
+        }
 
         slashAnim = Instantiate(slashAnimPrefab , slashAnimSpawnPoint.position , Quaternion.identity);
         slashAnim.transform.parent = this.transform.parent;
