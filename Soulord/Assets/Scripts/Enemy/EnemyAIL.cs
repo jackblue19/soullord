@@ -41,7 +41,7 @@ public class EnemyAIL : MonoBehaviour
         if (player == null) return;
 
         float distanceToPlayer = Vector2.Distance(transform.position, player.transform.position);
-        canSeePlayer = CanSeePlayer();
+        //canSeePlayer = CanSeePlayer();
         if (distanceToPlayer < shootingRange)
         {
             enemyPathfinding.MoveTo((player.transform.position - transform.position).normalized);
@@ -60,18 +60,18 @@ public class EnemyAIL : MonoBehaviour
         }
     }
 
-    private bool CanSeePlayer()
-    {
-        Vector2 direction = (player.transform.position - transform.position).normalized;
-        RaycastHit2D hit = Physics2D.Raycast(transform.position, direction, stopChasingDistance);
+    //private bool CanSeePlayer()
+    //{
+    //    Vector2 direction = (player.transform.position - transform.position).normalized;
+    //    RaycastHit2D hit = Physics2D.Raycast(transform.position, direction, stopChasingDistance);
 
-        if (hit.collider != null)
-        {
-            return hit.collider.CompareTag("Player");
-        }
+    //    if (hit.collider != null)
+    //    {
+    //        return hit.collider.CompareTag("Player");
+    //    }
 
-        return false;
-    }
+    //    return false;
+    //}
 
     private void ShootAtPlayer()
     {
