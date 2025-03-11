@@ -105,14 +105,6 @@ public class Sword : MonoBehaviour
                 //Debug.Log("Sword hit the slime! "+ damage);
                 enemy.TakeDame(damage);
             }
-            Rigidbody2D slimeRigidbody = collision.gameObject.GetComponent<Rigidbody2D>();
-            if ( slimeRigidbody != null )
-            {
-                Vector2 knockbackDirection = (collision.transform.position - transform.position).normalized;
-                slimeRigidbody.AddForce(knockbackDirection * 10f , ForceMode2D.Impulse);  
-            }
-
-            //collision.gameObject.GetComponent<EnemyAI>().TakeDamage(10); 
         }
     }
     // TODO -> adjust slash direction effect
