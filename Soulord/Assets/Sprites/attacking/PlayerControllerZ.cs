@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
-public class PlayerControllerZ : MonoBehaviour
+public class PlayerControllerZ : Singleton<PlayerControllerZ>
 {
     [SerializeField] private float moveSpeed = 1f;
 
@@ -40,6 +40,8 @@ public class PlayerControllerZ : MonoBehaviour
     private static bool isPaused = false;
     private void Awake()
     {
+        base.Awake();
+
         playerControls = new PlayerControls();
         rb = GetComponent<Rigidbody2D>();
         myAnimator = GetComponent<Animator>();
