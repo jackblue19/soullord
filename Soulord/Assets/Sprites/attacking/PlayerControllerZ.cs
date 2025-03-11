@@ -118,13 +118,13 @@ public class PlayerControllerZ : Singleton<PlayerControllerZ>
     private void Move()
     {
         //rb.MovePosition(rb.position + movement * (moveSpeed * Time.fixedDeltaTime));
-        Vector2 scaledMovement = movement * 15f; // Tăng giá trị lên cao để kiểm tra
-        // Nếu đang dash, tăng tốc độ
+        Vector2 scaledMovement = movement * 15f; 
+
         if (isDashing)
         {
-            scaledMovement *= dashSpeed; // Nếu đang dash, nhân với dashSpeed
+            scaledMovement *= dashSpeed; 
         }
-        Debug.Log($"Scaled Movement: {scaledMovement}");
+        //Debug.Log($"Scaled Movement: {scaledMovement}");
         rb.MovePosition(rb.position + scaledMovement * Time.fixedDeltaTime);
     }
 
@@ -289,47 +289,47 @@ public class PlayerControllerZ : Singleton<PlayerControllerZ>
         }
     }
 
-    //private void OnTriggerStay2D(Collider2D collision)
-    //{
-    //    if ( specialCollider != null && specialCollider.enabled && specialCollider.IsTouching(collision) )
-    //    {
-    //        if ( collision.CompareTag("Slime") )
-    //        {
-    //            EnemyAIL enemy = collision.GetComponent<EnemyAIL>();
-    //            if ( enemy != null )
-    //            {
-    //                enemy.TakeDame(30f);
-    //            }
+    private void OnTriggerStay2D(Collider2D collision)
+    {
+        if (specialCollider != null && specialCollider.enabled && specialCollider.IsTouching(collision))
+        {
+            if (collision.CompareTag("Slime"))
+            {
+                EnemyAIL enemy = collision.GetComponent<EnemyAIL>();
+                if (enemy != null)
+                {
+                    enemy.TakeDame(15f);
+                }
 
-    //            Rigidbody2D slimeRigidbody = collision.GetComponent<Rigidbody2D>();
-    //            if ( slimeRigidbody != null )
-    //            {
-    //                Vector2 knockbackDirection = (collision.transform.position - transform.position).normalized;
-    //                slimeRigidbody.AddForce(knockbackDirection * 10f , ForceMode2D.Impulse);
-    //            }
-    //        }
-    //    }
-    //}
-    //private void OnTriggerEnter2D(Collider2D collision)
-    //{
-    //    if ( specialCollider != null && specialCollider.enabled && specialCollider.IsTouching(collision) )
-    //    {
-    //        if ( collision.CompareTag("Slime") )
-    //        {
-    //            EnemyAIL enemy = collision.GetComponent<EnemyAIL>();
-    //            if ( enemy != null )
-    //            {
-    //                enemy.TakeDame(30f);
-    //            }
+                Rigidbody2D slimeRigidbody = collision.GetComponent<Rigidbody2D>();
+                if (slimeRigidbody != null)
+                {
+                    Vector2 knockbackDirection = (collision.transform.position - transform.position).normalized;
+                    slimeRigidbody.AddForce(knockbackDirection * 5f, ForceMode2D.Impulse);
+                }
+            }
+        }
+    }
+    private void OnTriggerEnter2D(Collider2D collision)
+    {
+        if (specialCollider != null && specialCollider.enabled && specialCollider.IsTouching(collision))
+        {
+            if (collision.CompareTag("Slime"))
+            {
+                EnemyAIL enemy = collision.GetComponent<EnemyAIL>();
+                if (enemy != null)
+                {
+                    enemy.TakeDame(15f);
+                }
 
-    //            Rigidbody2D slimeRigidbody = collision.GetComponent<Rigidbody2D>();
-    //            if ( slimeRigidbody != null )
-    //            {
-    //                Vector2 knockbackDirection = (collision.transform.position - transform.position).normalized;
-    //                slimeRigidbody.AddForce(knockbackDirection * 10f , ForceMode2D.Impulse);
-    //            }
-    //        }
-    //    }
-    //}
+                Rigidbody2D slimeRigidbody = collision.GetComponent<Rigidbody2D>();
+                if (slimeRigidbody != null)
+                {
+                    Vector2 knockbackDirection = (collision.transform.position - transform.position).normalized;
+                    slimeRigidbody.AddForce(knockbackDirection * 5f, ForceMode2D.Impulse);
+                }
+            }
+        }
+    }
 
 }
