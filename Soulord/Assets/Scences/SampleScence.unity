@@ -27710,7 +27710,7 @@ TilemapRenderer:
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: -1466468019
-  m_SortingLayer: 5
+  m_SortingLayer: 4
   m_SortingOrder: 0
   m_ChunkSize: {x: 32, y: 32, z: 32}
   m_ChunkCullingBounds: {x: 0, y: 0, z: 0}
@@ -52914,7 +52914,7 @@ Transform:
   m_GameObject: {fileID: 1007853127}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 12.1, y: -9.6, z: 0}
+  m_LocalPosition: {x: 11.18, y: -8.91, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -82050,16 +82050,21 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 117b9491556727c4f8f17100a26e516c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  enemyPrefabs:
+  wave1Enemies:
   - {fileID: 2331814315995792885, guid: b549dbe6e2955f04d9cd45659ea4b514, type: 3}
+  - {fileID: 2331814315995792885, guid: b549dbe6e2955f04d9cd45659ea4b514, type: 3}
+  wave2Enemies:
   - {fileID: 3560820266187751388, guid: 29e7d7ac201e99147b589406cd6c9a3c, type: 3}
+  - {fileID: 3560820266187751388, guid: 29e7d7ac201e99147b589406cd6c9a3c, type: 3}
+  boss: {fileID: 2331814315995792885, guid: b549dbe6e2955f04d9cd45659ea4b514, type: 3}
   spawnPoints:
   - {fileID: 1277305354}
   - {fileID: 1927263292}
   - {fileID: 1007853128}
   - {fileID: 242467907}
   timeBetweenSpawns: 1.5
-  maxEnemies: 14
+  timeBetweenWaves: 3
+  exit: {fileID: 8491050453122818521}
 --- !u!4 &1813666596
 Transform:
   m_ObjectHideFlags: 0

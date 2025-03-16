@@ -24,6 +24,20 @@ public class EnemyAIL : MonoBehaviour
     private bool canSeePlayer = false;
     private KnockBack KnockBack;
     public static EnemyAIL instance;
+    private EnemySpawner spawner;
+
+    public void SetSpawner(EnemySpawner spawner)
+    {
+        this.spawner = spawner;
+    }
+
+    private void OnDestroy()
+    {
+        if (spawner != null)
+        {
+            spawner.OnEnemyDeath();
+        }
+    }
 
     private void Awake()
     {
