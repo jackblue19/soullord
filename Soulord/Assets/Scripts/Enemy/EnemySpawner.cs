@@ -1,51 +1,87 @@
-using System.Collections;
+﻿using System.Collections;
 using UnityEngine;
 
 public class EnemySpawner : MonoBehaviour
 {
-    [SerializeField] public GameObject[] enemyPrefabs;
-    [SerializeField] public Transform[] spawnPoints;
-    [SerializeField] public float timeBetweenSpawns = 2f;
-    public int maxEnemies = 7;
-    private int currentEnemies = 0;
-    private WallController wall;
+    [SerializeField] private GameObject[] wave1Enemies; // Đợt 1
+    [SerializeField] private GameObject[] wave2Enemies; // Đợt 2
+    [SerializeField] private GameObject boss;           // Đợt 3 (Boss)
+    [SerializeField] private Transform[] spawnPoints;
+    [SerializeField] private float timeBetweenSpawns = 2f;
+    [SerializeField] private float timeBetweenWaves = 2f; // Thời gian nghỉ giữa các đợt
+    private int enemiesRemaining = 0; // Số quái còn lại
+
+    private int currentWave = 1;
+    public AreaExit exit;
 
     private void Start()
     {
-        wall = FindAnyObjectByType<WallController>();
-
-        if (wall != null)
-        {
-            wall.LockWall();
-        }
-        else
-        {
-            Debug.LogWarning("WallController do not exit!");
-        }
-
-        StartCoroutine( SpawnEnemies());
+        StartCoroutine(SpawnWave1());
     }
 
-    private IEnumerator SpawnEnemies()
+    private IEnumerator SpawnWave1()
     {
-        for ( int i = 0; i < maxEnemies; i++ )
-        {
-            yield return new WaitForSeconds( timeBetweenSpawns );
-            int randIndex = Random.Range(0, enemyPrefabs.Length);
-            int spawnIndex = Random.Range(0, spawnPoints.Length);
+        yield return StartCoroutine(SpawnEnemies(wave1Enemies, 5)); // Đợt 1: 5 quái
+        currentWave = 1;
+    }
 
-            Vector3 spawnPosition = spawnPoints[spawnIndex].position;
-            Instantiate(enemyPrefabs[randIndex], spawnPosition, Quaternion.identity);
-            currentEnemies++;
+    private IEnumerator SpawnWave2()
+    {
+        yield return StartCoroutine(SpawnEnemies(wave2Enemies, 4)); // Đợt 2: 4 quái mạnh hơn
+        currentWave = 2;
+    }
+
+    private IEnumerator SpawnBoss()
+    {
+        yield return new WaitForSeconds(2f);
+        SpawnEnemy(boss);
+        currentWave = 3;
+    }
+
+    private IEnumerator SpawnEnemies(GameObject[] enemyPrefabs, int count)
+    {
+        enemiesRemaining = count;
+        for (int i = 0; i < count; i++)
+        {
+            int randIndex = Random.Range(0, enemyPrefabs.Length);
+            SpawnEnemy(enemyPrefabs[randIndex]);
+            yield return new WaitForSeconds(timeBetweenSpawns);
         }
+    }
+
+    private void SpawnEnemy(GameObject enemyPrefab)
+    {
+        int spawnIndex = Random.Range(0, spawnPoints.Length);
+        Vector3 spawnPosition = spawnPoints[spawnIndex].position;
+        GameObject enemy = Instantiate(enemyPrefab, spawnPosition, Quaternion.identity);
+        enemy.GetComponent<EnemyAIL>().SetSpawner(this);
     }
 
     public void OnEnemyDeath()
     {
-        currentEnemies--;
-        if ( currentEnemies <= 0 )
+        enemiesRemaining--;
+
+        if (enemiesRemaining <= 0)
         {
-            wall.UnlockWall(); 
+            if (currentWave == 1)
+            {
+                StartCoroutine(StartNextWave(SpawnWave2()));
+            }
+            else if (currentWave == 2)
+            {
+                StartCoroutine(StartNextWave(SpawnBoss()));
+            }
+            else if (currentWave == 3) // Nếu boss chết, mở cổng
+            {
+                exit.UnlockExit();
+            }
         }
+    }
+
+    private IEnumerator StartNextWave(IEnumerator nextWave)
+    {
+        Debug.Log("Tất cả quái đã chết, chờ " + timeBetweenWaves + " giây...");
+        yield return new WaitForSeconds(timeBetweenWaves);
+        StartCoroutine(nextWave);
     }
 }
