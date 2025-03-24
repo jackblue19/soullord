@@ -13,9 +13,15 @@ public class EnemySpawner : MonoBehaviour
 
     private int currentWave = 1;
     public AreaExit exit;
-
+    private GameTimer gameTimer;
     private void Start()
     {
+        gameTimer = FindAnyObjectByType<GameTimer>();
+    }
+
+    public void PlayerMoved()
+    {
+        gameTimer?.StartTimer();
         StartCoroutine(SpawnWave1());
     }
 
@@ -71,11 +77,19 @@ public class EnemySpawner : MonoBehaviour
             {
                 StartCoroutine(StartNextWave(SpawnBoss()));
             }
-            else if (currentWave == 3) // Nếu boss chết, mở cổng
+            else if (currentWave == 3)
             {
+                gameTimer.StopTimer();
+                gameTimer.SaveResult(true);
                 exit.UnlockExit();
             }
         }
+    }
+
+    public void GameOver()
+    {
+        gameTimer.StopTimer();
+        gameTimer.SaveResult(false); // Lưu kết quả thua
     }
 
     private IEnumerator StartNextWave(IEnumerator nextWave)
