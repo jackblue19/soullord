@@ -1,17 +1,18 @@
 ﻿using System.Collections;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class EnemySpawner : MonoBehaviour
 {
     [SerializeField] private GameObject[] wave1Enemies; // Đợt 1
     [SerializeField] private GameObject[] wave2Enemies; // Đợt 2
-    [SerializeField] private GameObject boss;           // Đợt 3 (Boss)
+    [SerializeField] private GameObject[] boss;           // Đợt 3 (Boss)
     [SerializeField] private Transform[] spawnPoints;
     [SerializeField] private float timeBetweenSpawns = 2f;
     [SerializeField] private float timeBetweenWaves = 2f; // Thời gian nghỉ giữa các đợt
-    private int enemiesRemaining = 0; // Số quái còn lại
+    [SerializeField] private int enemiesRemaining = 0; // Số quái còn lại
 
-    private int currentWave = 1;
+    [SerializeField] private int currentWave = 1;
     public AreaExit exit;
     private GameTimer gameTimer;
     private void Start()
@@ -39,8 +40,7 @@ public class EnemySpawner : MonoBehaviour
 
     private IEnumerator SpawnBoss()
     {
-        yield return new WaitForSeconds(2f);
-        SpawnEnemy(boss);
+        yield return StartCoroutine(SpawnEnemies(boss, 1));
         currentWave = 3;
     }
 
@@ -79,8 +79,11 @@ public class EnemySpawner : MonoBehaviour
             }
             else if (currentWave == 3)
             {
-                gameTimer.StopTimer();
-                gameTimer.SaveResult(true);
+                if (SceneManager.GetActiveScene().name == "seaMap")
+                {
+                    gameTimer.StopTimer();
+                    gameTimer.SaveResult(true);
+                }
                 exit.UnlockExit();
             }
         }

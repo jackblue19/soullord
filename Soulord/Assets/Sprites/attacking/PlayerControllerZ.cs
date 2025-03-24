@@ -1,6 +1,7 @@
-using System.Collections;
+﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 using UnityEngine.UI;
 
 public class PlayerControllerZ : Singleton<PlayerControllerZ>
@@ -94,6 +95,11 @@ public class PlayerControllerZ : Singleton<PlayerControllerZ>
     private void OnEnable()
     {
         playerControls.Enable();
+        SceneManager.sceneLoaded += OnSceneLoaded;
+    }
+    private void OnDisable()
+    {
+        SceneManager.sceneLoaded -= OnSceneLoaded;
     }
 
     private void Update()
@@ -107,6 +113,23 @@ public class PlayerControllerZ : Singleton<PlayerControllerZ>
         }
         //OnTriggerEnter2D(specialCollider);
         //OnTriggerStay2D(specialCollider);
+    }
+
+    private void OnSceneLoaded(Scene scene, LoadSceneMode mode)
+    {
+        Debug.Log("Đã chuyển Scene: " + scene.name);
+        hasMoved = false;
+        ReconnectEnemySpawner();
+    }
+
+    private void ReconnectEnemySpawner()
+    {
+        enemySpawner = FindAnyObjectByType<EnemySpawner>();
+        if (!hasMoved && (Input.GetAxis("Horizontal") != 0 || Input.GetAxis("Vertical") != 0))
+        {
+            hasMoved = true;
+            enemySpawner.PlayerMoved();
+        }
     }
 
     private void FixedUpdate()
