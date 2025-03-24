@@ -1,11 +1,15 @@
-using System.Collections;
+﻿using System.Collections;
 using System.IO;
 using TMPro;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class GameTimer : Singleton<GameTimer>
 {
-    [SerializeField] public TextMeshProUGUI timerText; 
+    [SerializeField] public TextMeshProUGUI timerText;
+    [SerializeField] private GameObject successPanel;
+    [SerializeField] private GameObject nonStar1, nonStar2, nonStar3;
+    [SerializeField] private TextMeshProUGUI goldText;
     private float elapsedTime = 0f;
     private bool isRunning = false;
     private bool hasMoved = false;
@@ -42,9 +46,10 @@ public class GameTimer : Singleton<GameTimer>
 
     public int CalculateStars()
     {
-        if (elapsedTime < 30f) return 3;
-        if (elapsedTime < 60f) return 2;
-        return 1;
+        if (elapsedTime < 60f) return 3;
+        if (elapsedTime < 90f) return 2;
+        if (elapsedTime < 120f) return 1;
+        return 0;
     }
 
     public void SaveResult(bool isWin)
@@ -56,7 +61,63 @@ public class GameTimer : Singleton<GameTimer>
         File.WriteAllText(path, jsonData);
         Debug.Log("File saved at: " + Path.Combine(Application.persistentDataPath, "game_result.json"));
     }
+
+    public void LoadMenuScene()
+    {
+        Time.timeScale = 1;
+        DestroyDontDestroyOnLoadObjects(); 
+        SceneManager.LoadScene("MainMenuBar");
+    }
+
+    private void DestroyDontDestroyOnLoadObjects()
+    {
+        GameObject[] allObjects = FindObjectsByType<GameObject>(FindObjectsInactive.Include, FindObjectsSortMode.None);
+
+        foreach (GameObject obj in allObjects)
+        {
+            if (obj.scene.name == "DontDestroyOnLoad") 
+            {
+                Destroy(obj);
+            }
+        }
+    }
+    public void ShowSuccessScreen(bool isWin)
+    {
+        successPanel.SetActive(true);
+        Time.timeScale = 0;
+        int stars = isWin ? CalculateStars() : 0;
+
+        // Reset trạng thái ban đầu
+        nonStar1.SetActive(false);
+        nonStar2.SetActive(false);
+        nonStar3.SetActive(false);
+
+        if (stars == 3)
+        {
+            goldText.text = "+1000 Gold";
+        }
+        else if (stars == 2)
+        {
+            nonStar3.SetActive(true);
+            goldText.text = "+1000 Gold";
+        }
+        else if (stars == 1)
+        {
+            nonStar2.SetActive(true);
+            nonStar3.SetActive(true);
+            goldText.text = "+1000 Gold";
+        }
+        else // Nếu thua
+        {
+            nonStar1.SetActive(true);
+            nonStar2.SetActive(true);
+            nonStar3.SetActive(true);
+            goldText.text = "+0 Gold";
+        }
+    }
 }
+
+
 [System.Serializable]
 public class GameResult
 {
