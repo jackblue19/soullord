@@ -46,7 +46,8 @@ public class PlayerControllerZ : Singleton<PlayerControllerZ>
 
     private CapsuleCollider2D normalCollider;
     private CapsuleCollider2D specialCollider;
-
+    private EnemySpawner enemySpawner;
+    private bool hasMoved = false;
 
     private void Awake()
     {
@@ -87,6 +88,7 @@ public class PlayerControllerZ : Singleton<PlayerControllerZ>
         UpdateHpBar();
         UpdateStaminaBar();
         playerControls.Combat.Dash.performed += _ => Dash();
+        enemySpawner = FindAnyObjectByType<EnemySpawner>();
     }
 
     private void OnEnable()
@@ -97,6 +99,12 @@ public class PlayerControllerZ : Singleton<PlayerControllerZ>
     private void Update()
     {
         PlayerInput();
+
+        if (!hasMoved && (Input.GetAxis("Horizontal") != 0 || Input.GetAxis("Vertical") != 0))
+        {
+            hasMoved = true;
+            enemySpawner.PlayerMoved();
+        }
         //OnTriggerEnter2D(specialCollider);
         //OnTriggerStay2D(specialCollider);
     }
@@ -233,6 +241,7 @@ public class PlayerControllerZ : Singleton<PlayerControllerZ>
         if ( currentHp <= 0 )
         {
             Destroy(gameObject);
+            enemySpawner.GameOver();
         }
     }
 
