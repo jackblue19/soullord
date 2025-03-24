@@ -82340,7 +82340,8 @@ MonoBehaviour:
   wave2Enemies:
   - {fileID: 3560820266187751388, guid: 29e7d7ac201e99147b589406cd6c9a3c, type: 3}
   - {fileID: 3560820266187751388, guid: 29e7d7ac201e99147b589406cd6c9a3c, type: 3}
-  boss: {fileID: 2331814315995792885, guid: b549dbe6e2955f04d9cd45659ea4b514, type: 3}
+  boss:
+  - {fileID: 2331814315995792885, guid: b549dbe6e2955f04d9cd45659ea4b514, type: 3}
   spawnPoints:
   - {fileID: 1277305354}
   - {fileID: 1927263292}
@@ -82348,6 +82349,8 @@ MonoBehaviour:
   - {fileID: 242467907}
   timeBetweenSpawns: 1.5
   timeBetweenWaves: 3
+  enemiesRemaining: 0
+  currentWave: 1
   exit: {fileID: 8491050453122818521}
 --- !u!4 &1813666596
 Transform:

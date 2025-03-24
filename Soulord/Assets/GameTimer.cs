@@ -3,7 +3,7 @@ using System.IO;
 using TMPro;
 using UnityEngine;
 
-public class GameTimer : MonoBehaviour
+public class GameTimer : Singleton<GameTimer>
 {
     [SerializeField] public TextMeshProUGUI timerText; 
     private float elapsedTime = 0f;
