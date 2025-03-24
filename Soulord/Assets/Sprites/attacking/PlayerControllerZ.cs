@@ -148,6 +148,7 @@ public class PlayerControllerZ : Singleton<PlayerControllerZ>
 
     private void Move()
     {
+        if (rb == null) return;
         //rb.MovePosition(rb.position + movement * (moveSpeed * Time.fixedDeltaTime));
         Vector2 scaledMovement = movement * 15f; 
 
@@ -161,6 +162,7 @@ public class PlayerControllerZ : Singleton<PlayerControllerZ>
 
     private void AdjustPlayerFacingDirection()
     {
+        if (Camera.main == null) return;
         Vector3 mousePos = Input.mousePosition;
         Vector3 playerScreenPoint = Camera.main.WorldToScreenPoint(transform.position);
 
@@ -261,9 +263,8 @@ public class PlayerControllerZ : Singleton<PlayerControllerZ>
 
     public void Die()
     {
-        if ( currentHp <= 0 )
+        if (currentHp <= 0 && enemySpawner != null)
         {
-            Destroy(gameObject);
             enemySpawner.GameOver();
         }
     }
@@ -293,6 +294,7 @@ public class PlayerControllerZ : Singleton<PlayerControllerZ>
     }
     private void PerformSpecialSkill()
     {
+        if (myAnimator == null) return;
         if ( !myAnimator.GetCurrentAnimatorStateInfo(0).IsName("special") )
         {
             StartCoroutine(SpecialSkillRoutine());
@@ -300,13 +302,17 @@ public class PlayerControllerZ : Singleton<PlayerControllerZ>
     }
     private IEnumerator SpecialSkillRoutine()
     {
+        if (myAnimator == null || specialCollider == null) yield break;
         myAnimator.SetTrigger("specialTrigger");
         specialCollider.enabled = true;
         isInvincible = true;
 
         yield return new WaitForSeconds(3f);
 
-        myAnimator.SetTrigger("idleTrigger");
+        if (myAnimator != null)
+        {
+            myAnimator.SetTrigger("idleTrigger");
+        }
         specialCollider.enabled = false;
         isInvincible = false;
     }

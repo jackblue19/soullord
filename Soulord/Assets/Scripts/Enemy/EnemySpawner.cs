@@ -83,6 +83,7 @@ public class EnemySpawner : MonoBehaviour
                 {
                     gameTimer.StopTimer();
                     gameTimer.SaveResult(true);
+                    gameTimer.ShowSuccessScreen(true);
                 }
                 exit.UnlockExit();
             }
@@ -93,6 +94,7 @@ public class EnemySpawner : MonoBehaviour
     {
         gameTimer.StopTimer();
         gameTimer.SaveResult(false); // Lưu kết quả thua
+        gameTimer.ShowSuccessScreen(false);
     }
 
     private IEnumerator StartNextWave(IEnumerator nextWave)
