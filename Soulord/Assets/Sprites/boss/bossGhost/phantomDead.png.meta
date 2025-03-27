@@ -1,0 +1,1030 @@
+fileFormatVersion: 2
+guid: bbd01dd648be95648bbae2d4bfaf541e
+TextureImporter:
+  internalIDToNameTable:
+  - first:
+      213: -2629088932768545645
+    second: phantomDead_0
+  - first:
+      213: 8083996634375810018
+    second: phantomDead_1
+  - first:
+      213: 1564032243130399556
+    second: phantomDead_2
+  - first:
+      213: 7689168258077230396
+    second: phantomDead_3
+  - first:
+      213: 5030383165001657786
+    second: phantomDead_4
+  - first:
+      213: -8800444131175067675
+    second: phantomDead_5
+  - first:
+      213: 1950824184141752550
+    second: phantomDead_6
+  - first:
+      213: 7969350811407301890
+    second: phantomDead_7
+  - first:
+      213: 5154253545398614353
+    second: phantomDead_8
+  - first:
+      213: 2203984512060839475
+    second: phantomDead_9
+  - first:
+      213: -3161511654069242145
+    second: phantomDead_10
+  - first:
+      213: -6550947902397102707
+    second: phantomDead_11
+  - first:
+      213: 5917813649140013063
+    second: phantomDead_12
+  - first:
+      213: 6997752307703404649
+    second: phantomDead_13
+  - first:
+      213: 7315073355267696762
+    second: phantomDead_14
+  - first:
+      213: -6477597207015684993
+    second: phantomDead_15
+  - first:
+      213: 8501677714818796549
+    second: phantomDead_16
+  - first:
+      213: 2012582975531125606
+    second: phantomDead_17
+  - first:
+      213: 8958407392331005494
+    second: phantomDead_18
+  - first:
+      213: -2961853176322388014
+    second: phantomDead_19
+  - first:
+      213: -5231631289359758945
+    second: phantomDead_20
+  - first:
+      213: 1228344432508156293
+    second: phantomDead_21
+  - first:
+      213: -5537477908378128984
+    second: phantomDead_22
+  - first:
+      213: -4234855845680388876
+    second: phantomDead_23
+  - first:
+      213: -5443023439212227834
+    second: phantomDead_24
+  - first:
+      213: 6635449582695919690
+    second: phantomDead_25
+  - first:
+      213: -2846729548931940900
+    second: phantomDead_26
+  - first:
+      213: -5703466131865974424
+    second: phantomDead_27
+  - first:
+      213: -4318638185586860054
+    second: phantomDead_28
+  - first:
+      213: 7268585886019861453
+    second: phantomDead_29
+  - first:
+      213: -8469145032816097263
+    second: phantomDead_30
+  - first:
+      213: 3520687180253162623
+    second: phantomDead_31
+  - first:
+      213: 6119920972666988112
+    second: phantomDead_32
+  - first:
+      213: -5184848865322099597
+    second: phantomDead_33
+  - first:
+      213: 5763044952402136720
+    second: phantomDead_34
+  - first:
+      213: 1448205254509732316
+    second: phantomDead_35
+  externalObjects: {}
+  serializedVersion: 13
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+    flipGreenChannel: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  ignoreMipmapLimit: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 1
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 100
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  swizzle: 50462976
+  cookieLightType: 0
+  platformSettings:
+  - serializedVersion: 4
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: WebGL
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: phantomDead_0
+      rect:
+        serializedVersion: 2
+        x: 104
+        y: 218
+        width: 50
+        height: 44
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 3948b6f8b89938bd0800000000000000
+      internalID: -2629088932768545645
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: phantomDead_1
+      rect:
+        serializedVersion: 2
+        x: 329
+        y: 14
+        width: 140
+        height: 245
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 2eb6c6dab10203070800000000000000
+      internalID: 8083996634375810018
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: phantomDead_2
+      rect:
+        serializedVersion: 2
+        x: 632
+        y: 218
+        width: 50
+        height: 44
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 44b7b0dd90f84b510800000000000000
+      internalID: 1564032243130399556
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: phantomDead_3
+      rect:
+        serializedVersion: 2
+        x: 896
+        y: 221
+        width: 50
+        height: 43
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: c3507e0bac965ba60800000000000000
+      internalID: 7689168258077230396
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: phantomDead_4
+      rect:
+        serializedVersion: 2
+        x: 1160
+        y: 215
+        width: 50
+        height: 44
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: abd670226d28fc540800000000000000
+      internalID: 5030383165001657786
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: phantomDead_5
+      rect:
+        serializedVersion: 2
+        x: 1424
+        y: 215
+        width: 50
+        height: 44
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 5ef83af70ba8ed580800000000000000
+      internalID: -8800444131175067675
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: phantomDead_6
+      rect:
+        serializedVersion: 2
+        x: 1688
+        y: 215
+        width: 50
+        height: 44
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 6e8a2037248b21b10800000000000000
+      internalID: 1950824184141752550
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: phantomDead_7
+      rect:
+        serializedVersion: 2
+        x: 1952
+        y: 215
+        width: 50
+        height: 44
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 20d376ce652d89e60800000000000000
+      internalID: 7969350811407301890
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: phantomDead_8
+      rect:
+        serializedVersion: 2
+        x: 2216
+        y: 215
+        width: 50
+        height: 44
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 15938c78a46978740800000000000000
+      internalID: 5154253545398614353
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: phantomDead_9
+      rect:
+        serializedVersion: 2
+        x: 2462
+        y: 83
+        width: 86
+        height: 176
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 33659db8c30269e10800000000000000
+      internalID: 2203984512060839475
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: phantomDead_10
+      rect:
+        serializedVersion: 2
+        x: 2735
+        y: 137
+        width: 68
+        height: 119
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: fd6f1f9a6ed0024d0800000000000000
+      internalID: -3161511654069242145
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: phantomDead_11
+      rect:
+        serializedVersion: 2
+        x: 2999
+        y: 161
+        width: 62
+        height: 92
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: d85c787579b5615a0800000000000000
+      internalID: -6550947902397102707
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: phantomDead_12
+      rect:
+        serializedVersion: 2
+        x: 3260
+        y: 191
+        width: 71
+        height: 59
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 708d2f3f82c402250800000000000000
+      internalID: 5917813649140013063
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: phantomDead_13
+      rect:
+        serializedVersion: 2
+        x: 3536
+        y: 206
+        width: 50
+        height: 44
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 968d4dee5a20d1160800000000000000
+      internalID: 6997752307703404649
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: phantomDead_14
+      rect:
+        serializedVersion: 2
+        x: 3800
+        y: 203
+        width: 50
+        height: 47
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: a78e7aea57c548560800000000000000
+      internalID: 7315073355267696762
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: phantomDead_15
+      rect:
+        serializedVersion: 2
+        x: 4049
+        y: 185
+        width: 77
+        height: 77
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: f7484c5f8a3fa16a0800000000000000
+      internalID: -6477597207015684993
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: phantomDead_16
+      rect:
+        serializedVersion: 2
+        x: 4349
+        y: 221
+        width: 8
+        height: 8
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 50c01aa76d60cf570800000000000000
+      internalID: 8501677714818796549
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: phantomDead_17
+      rect:
+        serializedVersion: 2
+        x: 59
+        y: 14
+        width: 146
+        height: 200
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 66b08899d812eeb10800000000000000
+      internalID: 2012582975531125606
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: phantomDead_18
+      rect:
+        serializedVersion: 2
+        x: 599
+        y: 8
+        width: 125
+        height: 209
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 63e7f154f08a25c70800000000000000
+      internalID: 8958407392331005494
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: phantomDead_19
+      rect:
+        serializedVersion: 2
+        x: 857
+        y: 14
+        width: 140
+        height: 200
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 2df017c8a3265e6d0800000000000000
+      internalID: -2961853176322388014
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: phantomDead_20
+      rect:
+        serializedVersion: 2
+        x: 1115
+        y: 11
+        width: 146
+        height: 200
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: f9984e98f038567b0800000000000000
+      internalID: -5231631289359758945
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: phantomDead_21
+      rect:
+        serializedVersion: 2
+        x: 1385
+        y: 11
+        width: 140
+        height: 203
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 5893a79d0c4fb0110800000000000000
+      internalID: 1228344432508156293
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: phantomDead_22
+      rect:
+        serializedVersion: 2
+        x: 1655
+        y: 2
+        width: 125
+        height: 209
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 8ad6c8f5e2de623b0800000000000000
+      internalID: -5537477908378128984
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: phantomDead_23
+      rect:
+        serializedVersion: 2
+        x: 1919
+        y: 5
+        width: 122
+        height: 209
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 4f4eb3bab05ca35c0800000000000000
+      internalID: -4234855845680388876
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: phantomDead_24
+      rect:
+        serializedVersion: 2
+        x: 2183
+        y: 38
+        width: 116
+        height: 173
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 60351a9350f7674b0800000000000000
+      internalID: -5443023439212227834
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: phantomDead_25
+      rect:
+        serializedVersion: 2
+        x: 4328
+        y: 167
+        width: 50
+        height: 44
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: a40ba954d3ad51c50800000000000000
+      internalID: 6635449582695919690
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: phantomDead_26
+      rect:
+        serializedVersion: 2
+        x: 4592
+        y: 41
+        width: 50
+        height: 44
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: cddbd40de826e78d0800000000000000
+      internalID: -2846729548931940900
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: phantomDead_27
+      rect:
+        serializedVersion: 2
+        x: 4856
+        y: 26
+        width: 50
+        height: 44
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 86948a575c739d0b0800000000000000
+      internalID: -5703466131865974424
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: phantomDead_28
+      rect:
+        serializedVersion: 2
+        x: 5120
+        y: 11
+        width: 50
+        height: 44
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: aef58aa837d1114c0800000000000000
+      internalID: -4318638185586860054
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: phantomDead_29
+      rect:
+        serializedVersion: 2
+        x: 5384
+        y: 8
+        width: 47
+        height: 41
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: dcbb1ab4a543fd460800000000000000
+      internalID: 7268585886019861453
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: phantomDead_30
+      rect:
+        serializedVersion: 2
+        x: 5651
+        y: 5
+        width: 47
+        height: 41
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 1188bbfc67d877a80800000000000000
+      internalID: -8469145032816097263
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: phantomDead_31
+      rect:
+        serializedVersion: 2
+        x: 5912
+        y: 2
+        width: 50
+        height: 44
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: f7ce248465efbd030800000000000000
+      internalID: 3520687180253162623
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: phantomDead_32
+      rect:
+        serializedVersion: 2
+        x: 6176
+        y: 2
+        width: 50
+        height: 44
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 056674d23b35ee450800000000000000
+      internalID: 6119920972666988112
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: phantomDead_33
+      rect:
+        serializedVersion: 2
+        x: 6440
+        y: 2
+        width: 50
+        height: 44
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 37c93607d67bb08b0800000000000000
+      internalID: -5184848865322099597
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: phantomDead_34
+      rect:
+        serializedVersion: 2
+        x: 6704
+        y: 2
+        width: 50
+        height: 44
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 09e898ca9d27aff40800000000000000
+      internalID: 5763044952402136720
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: phantomDead_35
+      rect:
+        serializedVersion: 2
+        x: 6968
+        y: 2
+        width: 50
+        height: 44
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: cd128ec810f091410800000000000000
+      internalID: 1448205254509732316
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    customData: 
+    physicsShape: []
+    bones: []
+    spriteID: 
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+    spriteCustomMetadata:
+      entries: []
+    nameFileIdTable: {}
+  mipmapLimitGroupName: 
+  pSDRemoveMatte: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

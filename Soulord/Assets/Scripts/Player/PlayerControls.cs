@@ -205,6 +205,15 @@ public partial class @PlayerControls: IInputActionCollection2, IDisposable
                     ""processors"": """",
                     ""interactions"": """",
                     ""initialStateCheck"": false
+                },
+                {
+                    ""name"": ""Transform"",
+                    ""type"": ""Button"",
+                    ""id"": ""35b09753-1ae0-4aa2-9661-e84606f39b39"",
+                    ""expectedControlType"": """",
+                    ""processors"": """",
+                    ""interactions"": """",
+                    ""initialStateCheck"": false
                 }
             ],
             ""bindings"": [
@@ -216,6 +225,28 @@ public partial class @PlayerControls: IInputActionCollection2, IDisposable
                     ""processors"": """",
                     ""groups"": """",
                     ""action"": ""Special"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""68b0aca5-d9ab-4e4a-a1c3-29c64f4bc2b7"",
+                    ""path"": ""<Keyboard>/1"",
+                    ""interactions"": ""Press"",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""Transform"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""8d691512-55d0-4030-99dd-c87234735c0e"",
+                    ""path"": ""<Keyboard>/2"",
+                    ""interactions"": ""Press"",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""Transform"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": false
                 }
@@ -237,6 +268,7 @@ public partial class @PlayerControls: IInputActionCollection2, IDisposable
         // Skills
         m_Skills = asset.FindActionMap("Skills", throwIfNotFound: true);
         m_Skills_Special = m_Skills.FindAction("Special", throwIfNotFound: true);
+        m_Skills_Transform = m_Skills.FindAction("Transform", throwIfNotFound: true);
     }
 
     ~@PlayerControls()
@@ -453,11 +485,13 @@ public partial class @PlayerControls: IInputActionCollection2, IDisposable
     private readonly InputActionMap m_Skills;
     private List<ISkillsActions> m_SkillsActionsCallbackInterfaces = new List<ISkillsActions>();
     private readonly InputAction m_Skills_Special;
+    private readonly InputAction m_Skills_Transform;
     public struct SkillsActions
     {
         private @PlayerControls m_Wrapper;
         public SkillsActions(@PlayerControls wrapper) { m_Wrapper = wrapper; }
         public InputAction @Special => m_Wrapper.m_Skills_Special;
+        public InputAction @Transform => m_Wrapper.m_Skills_Transform;
         public InputActionMap Get() { return m_Wrapper.m_Skills; }
         public void Enable() { Get().Enable(); }
         public void Disable() { Get().Disable(); }
@@ -470,6 +504,9 @@ public partial class @PlayerControls: IInputActionCollection2, IDisposable
             @Special.started += instance.OnSpecial;
             @Special.performed += instance.OnSpecial;
             @Special.canceled += instance.OnSpecial;
+            @Transform.started += instance.OnTransform;
+            @Transform.performed += instance.OnTransform;
+            @Transform.canceled += instance.OnTransform;
         }
 
         private void UnregisterCallbacks(ISkillsActions instance)
@@ -477,6 +514,9 @@ public partial class @PlayerControls: IInputActionCollection2, IDisposable
             @Special.started -= instance.OnSpecial;
             @Special.performed -= instance.OnSpecial;
             @Special.canceled -= instance.OnSpecial;
+            @Transform.started -= instance.OnTransform;
+            @Transform.performed -= instance.OnTransform;
+            @Transform.canceled -= instance.OnTransform;
         }
 
         public void RemoveCallbacks(ISkillsActions instance)
@@ -510,5 +550,6 @@ public partial class @PlayerControls: IInputActionCollection2, IDisposable
     public interface ISkillsActions
     {
         void OnSpecial(InputAction.CallbackContext context);
+        void OnTransform(InputAction.CallbackContext context);
     }
 }
