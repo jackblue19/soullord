@@ -257,8 +257,10 @@ MonoBehaviour:
     serializedVersion: 2
     m_Bits: 0
   bulletPrefab: {fileID: 3249934117176979735, guid: 6d9bff994dca9bf4a82f4b9915cc84e6, type: 3}
+  bossBulletPrefab: {fileID: 3249934117176979735, guid: 6d9bff994dca9bf4a82f4b9915cc84e6, type: 3}
   bulletSpawnPoint: {fileID: 4792989488850422018}
   shootCooldown: 2
+  bulletCount: 8
 --- !u!114 &2749826659879779435
 MonoBehaviour:
   m_ObjectHideFlags: 0

@@ -53616,8 +53616,8 @@ Transform:
   m_GameObject: {fileID: 1073071894}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -2.6100001, y: -0.226924, z: 0}
-  m_LocalScale: {x: 1, y: 1.0246, z: 1}
+  m_LocalPosition: {x: -1.9, y: 2.25, z: 0}
+  m_LocalScale: {x: 0.39666227, y: 0.40642017, z: 0.39666227}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 1394240491}
@@ -53686,7 +53686,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: 7482667652216324306, guid: 311925a002f4447b3a28927169b83ea6, type: 3}
+  m_Sprite: {fileID: -8936346841901684153, guid: 91e68582c38dfd64889fc61db590b428, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -83472,9 +83472,9 @@ MonoBehaviour:
   - {fileID: 3560820266187751388, guid: 29e7d7ac201e99147b589406cd6c9a3c, type: 3}
   - {fileID: 2331814315995792885, guid: b549dbe6e2955f04d9cd45659ea4b514, type: 3}
   bossEnemiesSample:
-  - {fileID: 3471768793896586327, guid: cb57acd485734c5478993c3de9ee572c, type: 3}
-  - {fileID: 7412699421981829632, guid: 3f44a8e10fd75fd449acf82984a82408, type: 3}
-  - {fileID: 3471768793896586327, guid: cb57acd485734c5478993c3de9ee572c, type: 3}
+  - {fileID: 1824427335641250555, guid: 6922d5ee1a993884e9a1fe5c062a1768, type: 3}
+  - {fileID: 1600174413137600299, guid: 723e11b5c974c1641a937b7a132d44d0, type: 3}
+  - {fileID: 1824427335641250555, guid: 6922d5ee1a993884e9a1fe5c062a1768, type: 3}
   normalEnemiesSeaMap:
   - {fileID: 2331814315995792885, guid: b549dbe6e2955f04d9cd45659ea4b514, type: 3}
   - {fileID: 3560820266187751388, guid: 29e7d7ac201e99147b589406cd6c9a3c, type: 3}
@@ -83483,9 +83483,9 @@ MonoBehaviour:
   - {fileID: 2331814315995792885, guid: b549dbe6e2955f04d9cd45659ea4b514, type: 3}
   - {fileID: 3560820266187751388, guid: 29e7d7ac201e99147b589406cd6c9a3c, type: 3}
   bossEnemiesSeaMap:
-  - {fileID: 7412699421981829632, guid: 3f44a8e10fd75fd449acf82984a82408, type: 3}
-  - {fileID: 3471768793896586327, guid: cb57acd485734c5478993c3de9ee572c, type: 3}
-  - {fileID: 7412699421981829632, guid: 3f44a8e10fd75fd449acf82984a82408, type: 3}
+  - {fileID: 1600174413137600299, guid: 723e11b5c974c1641a937b7a132d44d0, type: 3}
+  - {fileID: 1824427335641250555, guid: 6922d5ee1a993884e9a1fe5c062a1768, type: 3}
+  - {fileID: 1600174413137600299, guid: 723e11b5c974c1641a937b7a132d44d0, type: 3}
   spawnPoints:
   - {fileID: 1277305354}
   - {fileID: 1927263292}

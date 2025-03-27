@@ -27,9 +27,14 @@ public class SupportBullet : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        if (collision.CompareTag("Slime"))
+        if (collision.CompareTag("Slime") || collision.gameObject.CompareTag("SlimeBlueBoss"))
         {
             collision.GetComponent<EnemyAIL>().TakeDame(damage);
+            Destroy(gameObject);
+        }
+        if (collision.CompareTag("SlimeBlueBoss"))
+        {
+            collision.GetComponent<EnemyBoss>().TakeDamage(damage);
             Destroy(gameObject);
         }
     }

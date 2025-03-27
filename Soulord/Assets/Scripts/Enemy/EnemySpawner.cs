@@ -55,6 +55,10 @@ public class EnemySpawner : MonoBehaviour
     {
         for (currentWave = 0; currentWave < 3; currentWave++)
         {
+            while (enemiesRemaining > 0)
+            {
+                yield return null;
+            }
             Debug.Log($"Bắt đầu round {currentWave + 1}");
             yield return StartCoroutine(SpawnRound(currentWave));
             yield return new WaitForSeconds(timeBetweenWaves); // Chờ 2 giây giữa các round

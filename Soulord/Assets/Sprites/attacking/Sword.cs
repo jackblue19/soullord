@@ -94,7 +94,7 @@ public class Sword : MonoBehaviour
     }
     private void OnCollisionEnter2D(Collision2D collision)
     {
-        if ( collision.gameObject.CompareTag("Slime") )  
+        if ( collision.gameObject.CompareTag("Slime") || collision.gameObject.CompareTag("SlimeBlueBoss"))  
         {
 
             // => remove follow mouse

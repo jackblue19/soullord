@@ -1,4 +1,4 @@
-using System.Collections;
+﻿using System.Collections;
 using UnityEngine;
 using UnityEngine.UI;
 
@@ -15,8 +15,10 @@ public class EnemyAIL : MonoBehaviour
     [SerializeField] private float stopChasingDistance = 40f;
     [SerializeField] private LayerMask obstacleLayer;
     [SerializeField] private GameObject bulletPrefab;
+    [SerializeField] private GameObject bossBulletPrefab;
     [SerializeField] private Transform bulletSpawnPoint;
     [SerializeField] private float shootCooldown = 2f;
+    [SerializeField] private int bulletCount = 8;
 
     private Flash flash;
     private float lastShootTime;
@@ -68,24 +70,44 @@ public class EnemyAIL : MonoBehaviour
             }
             else
             {
-                ShootAtPlayer();
+                if (CompareTag("SlimeBlueBoss")) // Nếu là boss
+                {
+                    ShootBossBulletSpread();
+                }
+                else // Nếu là quái thường
+                {
+                    ShootAtPlayer();
+                }
                 enemyPathfinding.MoveTo((player.transform.position - transform.position).normalized);
             }
         }
     }
 
-    //private bool CanSeePlayer()
-    //{
-    //    Vector2 direction = (player.transform.position - transform.position).normalized;
-    //    RaycastHit2D hit = Physics2D.Raycast(transform.position, direction, stopChasingDistance);
+    private void ShootBossBulletSpread()
+    {
+        if (Time.time - lastShootTime >= shootCooldown)
+        {
+            lastShootTime = Time.time;
+            float angleStep = 360f / bulletCount;
 
-    //    if (hit.collider != null)
-    //    {
-    //        return hit.collider.CompareTag("Player");
-    //    }
+            for (int i = 0; i < bulletCount; i++)
+            {
+                float angle = i * angleStep;
+                Vector2 shootDirection = new Vector2(Mathf.Cos(angle * Mathf.Deg2Rad), Mathf.Sin(angle * Mathf.Deg2Rad));
 
-    //    return false;
-    //}
+                GameObject bullet = Instantiate(bossBulletPrefab, bulletSpawnPoint.position, Quaternion.identity);
+                EnemyBossBullet bulletScript = bullet.GetComponent<EnemyBossBullet>();
+
+                Rigidbody2D rb = bullet.GetComponent<Rigidbody2D>();
+                if (rb != null)
+                {
+                    rb.linearVelocity = shootDirection * 8f;
+                }
+
+                bulletScript.SetDamage(enterDamage);
+            }
+        }
+    }
 
     private void ShootAtPlayer()
     {
