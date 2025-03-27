@@ -147,7 +147,8 @@ TextureImporter:
     secondaryTextures: []
     spriteCustomMetadata:
       entries: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      Bioball_0: 2025213608826553747
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

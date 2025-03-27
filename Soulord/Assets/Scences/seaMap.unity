@@ -5981,23 +5981,37 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 117b9491556727c4f8f17100a26e516c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  wave1Enemies:
+  normalEnemiesSample:
   - {fileID: 2331814315995792885, guid: b549dbe6e2955f04d9cd45659ea4b514, type: 3}
   - {fileID: 2331814315995792885, guid: b549dbe6e2955f04d9cd45659ea4b514, type: 3}
-  wave2Enemies:
   - {fileID: 3560820266187751388, guid: 29e7d7ac201e99147b589406cd6c9a3c, type: 3}
   - {fileID: 3560820266187751388, guid: 29e7d7ac201e99147b589406cd6c9a3c, type: 3}
-  boss:
   - {fileID: 2331814315995792885, guid: b549dbe6e2955f04d9cd45659ea4b514, type: 3}
+  - {fileID: 2331814315995792885, guid: b549dbe6e2955f04d9cd45659ea4b514, type: 3}
+  bossEnemiesSample:
+  - {fileID: 1600174413137600299, guid: 723e11b5c974c1641a937b7a132d44d0, type: 3}
+  - {fileID: 1600174413137600299, guid: 723e11b5c974c1641a937b7a132d44d0, type: 3}
+  - {fileID: 1600174413137600299, guid: 723e11b5c974c1641a937b7a132d44d0, type: 3}
+  normalEnemiesSeaMap:
+  - {fileID: 3560820266187751388, guid: 29e7d7ac201e99147b589406cd6c9a3c, type: 3}
+  - {fileID: 3560820266187751388, guid: 29e7d7ac201e99147b589406cd6c9a3c, type: 3}
+  - {fileID: 2331814315995792885, guid: b549dbe6e2955f04d9cd45659ea4b514, type: 3}
+  - {fileID: 2331814315995792885, guid: b549dbe6e2955f04d9cd45659ea4b514, type: 3}
+  - {fileID: 3560820266187751388, guid: 29e7d7ac201e99147b589406cd6c9a3c, type: 3}
+  - {fileID: 3560820266187751388, guid: 29e7d7ac201e99147b589406cd6c9a3c, type: 3}
+  bossEnemiesSeaMap:
+  - {fileID: 1824427335641250555, guid: 6922d5ee1a993884e9a1fe5c062a1768, type: 3}
+  - {fileID: 1824427335641250555, guid: 6922d5ee1a993884e9a1fe5c062a1768, type: 3}
+  - {fileID: 1824427335641250555, guid: 6922d5ee1a993884e9a1fe5c062a1768, type: 3}
   spawnPoints:
   - {fileID: 1497977893}
   - {fileID: 795296541}
   - {fileID: 1534067574}
   - {fileID: 914491809}
+  bossSpawnPoints:
+  - {fileID: 980050835}
   timeBetweenSpawns: 1.5
   timeBetweenWaves: 3
-  enemiesRemaining: 0
-  currentWave: 1
   exit: {fileID: 6041445216290975272}
 --- !u!4 &923286048
 Transform:
@@ -6016,7 +6030,39 @@ Transform:
   - {fileID: 795296541}
   - {fileID: 1534067574}
   - {fileID: 914491809}
+  - {fileID: 980050835}
   m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &980050834
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 980050835}
+  m_Layer: 0
+  m_Name: pos5
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &980050835
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 980050834}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 13.58, y: -2.67, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 923286048}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1255460232
 GameObject:

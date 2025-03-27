@@ -10,6 +10,7 @@ public class GameTimer : Singleton<GameTimer>
     [SerializeField] private GameObject successPanel;
     [SerializeField] private GameObject nonStar1, nonStar2, nonStar3;
     [SerializeField] private TextMeshProUGUI goldText;
+    [SerializeField] private int gold = 1000;
     private float elapsedTime = 0f;
     private bool isRunning = false;
     private bool hasMoved = false;
@@ -46,16 +47,24 @@ public class GameTimer : Singleton<GameTimer>
 
     public int CalculateStars()
     {
-        if (elapsedTime < 60f) return 3;
-        if (elapsedTime < 90f) return 2;
-        if (elapsedTime < 120f) return 1;
+        if (elapsedTime < 90f) return 3;
+        if (elapsedTime < 120f) return 2;
+        if (elapsedTime < 150f) return 1;
         return 0;
     }
+    public void WinningBonus()
+    {
+        gold += 1000;
+    }
 
+    public int getGold()
+    {
+        return gold;
+    }
     public void SaveResult(bool isWin)
     {
         int stars = isWin ? CalculateStars() : 0;
-        string jsonData = JsonUtility.ToJson(new GameResult(elapsedTime, stars, isWin));
+        string jsonData = JsonUtility.ToJson(new GameResult(elapsedTime, stars, isWin, gold));
 
         string path = Path.Combine(Application.persistentDataPath, "game_result.json");
         File.WriteAllText(path, jsonData);
@@ -124,11 +133,12 @@ public class GameResult
     public float time;
     public int stars;
     public bool isWin;
-
-    public GameResult(float time, int stars, bool isWin)
+    public int gold;
+    public GameResult(float time, int stars, bool isWin, int gold)
     {
         this.time = time;
         this.stars = stars;
         this.isWin = isWin;
+        this.gold = gold;
     }
 }

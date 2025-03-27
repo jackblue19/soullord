@@ -30,6 +30,7 @@ public class PlayerControllerZ : Singleton<PlayerControllerZ>
     [SerializeField] private Image StaminaBar;
 
     private PlayerControls playerControls;
+    [HideInInspector] public Coroutine burnEffectCoroutine;
     private Vector2 movement;
     private Rigidbody2D rb;
     private Animator myAnimator;
@@ -62,6 +63,22 @@ public class PlayerControllerZ : Singleton<PlayerControllerZ>
         playerControls.PauseControls.BreakContinue.performed += ctx => TogglePause();
         playerControls.Skills.Special.performed += _ => PerformSpecialSkill();
         GetCorrectCollider2D();
+    }
+
+    public IEnumerator FlashRedWhileBurning(float burnDuration)
+    {
+        float elapsedTime = 0f;
+        bool isRed = false;
+
+        while (elapsedTime < burnDuration)
+        {
+            mySpriteRender.color = isRed ? Color.white : Color.red; // Chuyển đổi giữa màu trắng & đỏ
+            isRed = !isRed;
+            yield return new WaitForSeconds(0.2f); // Nhấp nháy mỗi 0.2s
+            elapsedTime += 0.2f;
+        }
+
+        mySpriteRender.color = Color.white; // Trả lại màu ban đầu
     }
 
     private void GetCorrectCollider2D()
@@ -331,20 +348,19 @@ public class PlayerControllerZ : Singleton<PlayerControllerZ>
     {
         if (specialCollider != null && specialCollider.enabled && specialCollider.IsTouching(collision))
         {
-            if (collision.CompareTag("Slime"))
+            if (collision.CompareTag("Slime") || collision.gameObject.CompareTag("SlimeBlueBoss"))
             {
                 EnemyAIL enemy = collision.GetComponent<EnemyAIL>();
                 if (enemy != null)
                 {
-                    enemy.TakeDame(15f);
+                    enemy.TakeDame(3f);
                 }
-
-                Rigidbody2D slimeRigidbody = collision.GetComponent<Rigidbody2D>();
-                if (slimeRigidbody != null)
-                {
-                    Vector2 knockbackDirection = (collision.transform.position - transform.position).normalized;
-                    slimeRigidbody.AddForce(knockbackDirection * 5f, ForceMode2D.Impulse);
-                }
+                //Rigidbody2D slimeRigidbody = collision.GetComponent<Rigidbody2D>();
+                //if (slimeRigidbody != null)
+                //{
+                //    Vector2 knockbackDirection = (collision.transform.position - transform.position).normalized;
+                //    slimeRigidbody.AddForce(knockbackDirection * 5f, ForceMode2D.Impulse);
+                //}
             }
         }
     }
@@ -352,20 +368,19 @@ public class PlayerControllerZ : Singleton<PlayerControllerZ>
     {
         if (specialCollider != null && specialCollider.enabled && specialCollider.IsTouching(collision))
         {
-            if (collision.CompareTag("Slime"))
+            if (collision.CompareTag("Slime") || collision.gameObject.CompareTag("SlimeBlueBoss"))
             {
                 EnemyAIL enemy = collision.GetComponent<EnemyAIL>();
                 if (enemy != null)
                 {
-                    enemy.TakeDame(15f);
+                    enemy.TakeDame(3f);
                 }
-
-                Rigidbody2D slimeRigidbody = collision.GetComponent<Rigidbody2D>();
-                if (slimeRigidbody != null)
-                {
-                    Vector2 knockbackDirection = (collision.transform.position - transform.position).normalized;
-                    slimeRigidbody.AddForce(knockbackDirection * 5f, ForceMode2D.Impulse);
-                }
+                //Rigidbody2D slimeRigidbody = collision.GetComponent<Rigidbody2D>();
+                //if (slimeRigidbody != null)
+                //{
+                //    Vector2 knockbackDirection = (collision.transform.position - transform.position).normalized;
+                //    slimeRigidbody.AddForce(knockbackDirection * 5f, ForceMode2D.Impulse);
+                //}
             }
         }
     }
