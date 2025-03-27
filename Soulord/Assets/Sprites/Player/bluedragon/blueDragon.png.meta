@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: 02f3a9a0bb390274895bfd6f573281e3
+guid: 9f5fe7456ed2a214dbb2107b333203c0
 TextureImporter:
   internalIDToNameTable:
   - first:
@@ -58,7 +58,7 @@ TextureImporter:
   maxTextureSize: 2048
   textureSettings:
     serializedVersion: 2
-    filterMode: 0
+    filterMode: 1
     aniso: 1
     mipBias: 0
     wrapU: 1
@@ -72,7 +72,7 @@ TextureImporter:
   spriteMeshType: 1
   alignment: 0
   spritePivot: {x: 0.5, y: 0.5}
-  spritePixelsToUnits: 16
+  spritePixelsToUnits: 100
   spriteBorder: {x: 0, y: 0, z: 0, w: 0}
   spriteGenerateFallbackPhysicsShape: 1
   alphaUsage: 1
@@ -96,19 +96,6 @@ TextureImporter:
     maxTextureSize: 2048
     resizeAlgorithm: 0
     textureFormat: -1
-    textureCompression: 0
-    compressionQuality: 50
-    crunchedCompression: 0
-    allowsAlphaSplitting: 0
-    overridden: 0
-    ignorePlatformSupport: 0
-    androidETC2FallbackOverride: 0
-    forceMaximumCompressionQuality_BC6H_BC7: 0
-  - serializedVersion: 4
-    buildTarget: Standalone
-    maxTextureSize: 2048
-    resizeAlgorithm: 0
-    textureFormat: -1
     textureCompression: 1
     compressionQuality: 50
     crunchedCompression: 0
@@ -118,7 +105,7 @@ TextureImporter:
     androidETC2FallbackOverride: 0
     forceMaximumCompressionQuality_BC6H_BC7: 0
   - serializedVersion: 4
-    buildTarget: WebGL
+    buildTarget: Standalone
     maxTextureSize: 2048
     resizeAlgorithm: 0
     textureFormat: -1
@@ -159,9 +146,9 @@ TextureImporter:
       name: blueDragon_1
       rect:
         serializedVersion: 2
-        x: 344
+        x: 343
         y: 5
-        width: 217
+        width: 218
         height: 206
       alignment: 0
       pivot: {x: 0, y: 0}
@@ -181,9 +168,9 @@ TextureImporter:
       name: blueDragon_2
       rect:
         serializedVersion: 2
-        x: 584
+        x: 583
         y: 5
-        width: 217
+        width: 218
         height: 206
       alignment: 0
       pivot: {x: 0, y: 0}
@@ -205,7 +192,7 @@ TextureImporter:
         serializedVersion: 2
         x: 823
         y: 5
-        width: 211
+        width: 212
         height: 206
       alignment: 0
       pivot: {x: 0, y: 0}
@@ -228,7 +215,7 @@ TextureImporter:
         x: 1057
         y: 5
         width: 212
-        height: 211
+        height: 212
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -250,7 +237,7 @@ TextureImporter:
         x: 1297
         y: 5
         width: 218
-        height: 211
+        height: 212
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -269,10 +256,10 @@ TextureImporter:
       name: blueDragon_6
       rect:
         serializedVersion: 2
-        x: 1538
+        x: 1537
         y: 5
-        width: 217
-        height: 211
+        width: 218
+        height: 212
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -291,10 +278,10 @@ TextureImporter:
       name: blueDragon_7
       rect:
         serializedVersion: 2
-        x: 1778
+        x: 1777
         y: 5
-        width: 217
-        height: 211
+        width: 218
+        height: 212
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -313,7 +300,7 @@ TextureImporter:
     customData: 
     physicsShape: []
     bones: []
-    spriteID: 756a559ba8b9ea74a94c9a65bb720abd
+    spriteID: 
     internalID: 0
     vertices: []
     indices: 
@@ -322,15 +309,7 @@ TextureImporter:
     secondaryTextures: []
     spriteCustomMetadata:
       entries: []
-    nameFileIdTable:
-      blueDragon_0: -3308606394016433762
-      blueDragon_1: -7148885447921554503
-      blueDragon_2: 622186029872607182
-      blueDragon_3: -9183944923164937625
-      blueDragon_4: 5114251396620961716
-      blueDragon_5: 51536576890442716
-      blueDragon_6: 2741375111101497760
-      blueDragon_7: -7041696001203429288
+    nameFileIdTable: {}
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
