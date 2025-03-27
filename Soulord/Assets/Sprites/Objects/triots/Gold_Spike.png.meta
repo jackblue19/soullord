@@ -1,10 +1,10 @@
 fileFormatVersion: 2
-guid: 8e9bc945c2b60bb47a901d39cdcd79f3
+guid: 73959be64c5412d45b89028d4d594547
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: 603470876214880045
-    second: 9sprite_8bit_circle 1_0
+      213: -885052873721048008
+    second: Gold_Spike_0
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -113,13 +113,13 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: 9sprite_8bit_circle 1_0
+      name: Gold_Spike_0
       rect:
         serializedVersion: 2
         x: 0
         y: 0
-        width: 512
-        height: 512
+        width: 64
+        height: 136
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -128,8 +128,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: d27e4198095ff5800800000000000000
-      internalID: 603470876214880045
+      spriteID: 8341b6eb919a7b3f0800000000000000
+      internalID: -885052873721048008
       vertices: []
       indices: 
       edges: []
@@ -147,8 +147,7 @@ TextureImporter:
     secondaryTextures: []
     spriteCustomMetadata:
       entries: []
-    nameFileIdTable:
-      9sprite_8bit_circle 1_0: 603470876214880045
+    nameFileIdTable: {}
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

@@ -1,10 +1,10 @@
 fileFormatVersion: 2
-guid: 8e9bc945c2b60bb47a901d39cdcd79f3
+guid: 966d6f2d808f0724ab406a8429147d9d
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: 603470876214880045
-    second: 9sprite_8bit_circle 1_0
+      213: 5557160431612163851
+    second: SnowBoulder_0
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -113,13 +113,13 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: 9sprite_8bit_circle 1_0
+      name: SnowBoulder_0
       rect:
         serializedVersion: 2
         x: 0
         y: 0
-        width: 512
-        height: 512
+        width: 79
+        height: 71
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -128,8 +128,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: d27e4198095ff5800800000000000000
-      internalID: 603470876214880045
+      spriteID: b07791e28fffe1d40800000000000000
+      internalID: 5557160431612163851
       vertices: []
       indices: 
       edges: []
@@ -147,8 +147,7 @@ TextureImporter:
     secondaryTextures: []
     spriteCustomMetadata:
       entries: []
-    nameFileIdTable:
-      9sprite_8bit_circle 1_0: 603470876214880045
+    nameFileIdTable: {}
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
