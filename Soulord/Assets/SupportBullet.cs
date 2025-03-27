@@ -32,10 +32,5 @@ public class SupportBullet : MonoBehaviour
             collision.GetComponent<EnemyAIL>().TakeDame(damage);
             Destroy(gameObject);
         }
-        if (collision.CompareTag("SlimeBlueBoss"))
-        {
-            collision.GetComponent<EnemyBoss>().TakeDamage(damage);
-            Destroy(gameObject);
-        }
     }
 }

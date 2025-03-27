@@ -41,8 +41,8 @@ public class SupportAI : Singleton<SupportAI>
         GameObject enemy = FindNearestEnemy();
         if (enemy != null)
         {
-            ShootAtEnemy(enemy.transform);
             FlipDirection(enemy.transform);
+            ShootAtEnemy(enemy.transform);
         }
     }
 
